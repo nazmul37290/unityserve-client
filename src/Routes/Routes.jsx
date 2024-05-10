@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import NeedVolunteer from "../Pages/NeedVolunteer";
 import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
+import AddVolunteerPost from "../Pages/AddVolunteerPost";
 
 const Routes = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const Routes = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/addVolunteerNeedPost",
+        element: <AddVolunteerPost></AddVolunteerPost>,
       },
     ],
   },

@@ -119,7 +119,7 @@ const Navabr = () => {
                   <ul className="  bg-[rgb(0,0,0,.2)] background-blur ">
                     <li>
                       <NavLink
-                        to={"/addVolunteerPost"}
+                        to={"/addVolunteerNeedPost"}
                         className={({ isActive, isPending }) =>
                           isActive
                             ? "bg-light text-white "
@@ -200,7 +200,7 @@ const Navabr = () => {
                 <ul className=" w-[200px] bg-[rgb(0,0,0,.2)] background-blur p-2">
                   <li className="hover:bg-middle hover:text-white rounded-xl">
                     <NavLink
-                      to={"/addVolunteerPost"}
+                      to={"/addVolunteerNeedPost"}
                       className={({ isActive, isPending }) =>
                         isActive
                           ? "bg-light text-white rounded-full"
