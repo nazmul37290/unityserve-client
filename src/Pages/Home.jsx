@@ -1,5 +1,7 @@
 import banner from "../assets/banner.jpg";
+import Carousel from "../components/Carousel";
 import NavbarBg from "../components/NavbarBg";
+import VolunteerNeedNow from "../sections/VolunteerNeedNow";
 
 const Home = () => {
   return (
@@ -11,7 +13,13 @@ const Home = () => {
               create positive change
             in the world`}
       ></NavbarBg>
-      <h1 className="">This is the home pages</h1>
+
+      <div className="mt-24">
+        <Carousel></Carousel>
+      </div>
+      <div className="mt-24">
+        <VolunteerNeedNow></VolunteerNeedNow>
+      </div>
     </div>
   );
 };
