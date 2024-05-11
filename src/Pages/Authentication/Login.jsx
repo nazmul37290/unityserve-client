@@ -33,6 +33,7 @@ const Login = () => {
   const handleGoogleLogin = () => {
     signInWithGoogle()
       .then((result) => {
+        toast.success("Logged in successfully");
         console.log(result.user);
         navigate("/");
       })
@@ -131,7 +132,7 @@ const Login = () => {
 
                 <Link to={"/register"}>
                   <p className="mt-8 text-xs font-light text-center text-light">
-                    Don't have an account? Register
+                    Dont have an account? Register
                   </p>
                 </Link>
               </div>
