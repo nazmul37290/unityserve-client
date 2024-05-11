@@ -3,6 +3,8 @@ import NavbarBg from "../../components/NavbarBg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import Lottie from "lottie-react";
+import logingif from "../../assets/ligin.json";
 
 const Register = () => {
   const { createUser, setUser, updateUserProfile, logOut } =
@@ -52,7 +54,13 @@ const Register = () => {
       <NavbarBg></NavbarBg>
       <section className="bg-white h-[800px] dark:bg-gray-900">
         <div className="container flex items-center justify-center mt-20 px-6 mx-auto">
-          <form onSubmit={handleRegister} className="w-full max-w-md">
+          <div className="w-1/2">
+            <Lottie animationData={logingif} loop={true}></Lottie>
+          </div>
+          <form
+            onSubmit={handleRegister}
+            className="w-full shadow p-5 max-w-md"
+          >
             <h1 className="text-black text-2xl mb-5 font-bold text-center">
               UNITY<span className="text-light">SERVE</span>
             </h1>

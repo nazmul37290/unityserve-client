@@ -13,7 +13,7 @@ export default {
     colors: {
       main: "#22311d",
       middle: "#374f2f",
-      light: "#2cb800",
+      light: "#269c03",
     },
   },
   plugins: [require("daisyui"), require("flowbite/plugin")],

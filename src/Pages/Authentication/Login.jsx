@@ -7,6 +7,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import Lottie from "lottie-react";
+import logingif from "../../assets/loginpage.json";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -47,8 +49,11 @@ const Login = () => {
       <div>
         <div>
           <>
-            <div className="h-[800px]">
-              <div className="w-1/3 h-full p-6 m-auto mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
+            <div className=" max-w-7xl mx-auto flex gap-10 mt-10">
+              <div className="w-1/2">
+                <Lottie animationData={logingif} loop={true}></Lottie>
+              </div>
+              <div className="w-1/2 h-full p-6 m-auto mx-auto bg-white rounded-lg shadow-md dark:bg-gray-800">
                 <div className="flex justify-center mx-auto"></div>
 
                 <form onSubmit={handleLogin} className="mt-6">

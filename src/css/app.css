@@ -37,3 +37,7 @@ nav a:hover {
   background-size: cover;
   background-position: center;
 }
+.react-tabs__tab--selected {
+  background-color: #269c03 !important;
+  color: white !important;
+}

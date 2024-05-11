@@ -6,14 +6,18 @@ import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import AddVolunteerPost from "../Pages/AddVolunteerPost";
 import PostDetail from "../Pages/Post Details/PostDetail";
+import ErrorPage from "../Pages/ErrorPage";
+import ManageMyPost from "../Pages/ManageMyPost";
+import Update from "../Pages/Update";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Layout></Layout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        index: true,
+        path: "/",
         element: <Home></Home>,
       },
 
@@ -36,6 +40,14 @@ const Routes = createBrowserRouter([
       {
         path: "/postDetails",
         element: <PostDetail></PostDetail>,
+      },
+      {
+        path: "/manageMyPost",
+        element: <ManageMyPost></ManageMyPost>,
+      },
+      {
+        path: "/updatePost",
+        element: <Update></Update>,
       },
     ],
   },
