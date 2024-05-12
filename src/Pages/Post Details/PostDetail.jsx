@@ -3,6 +3,7 @@ import banner from "../../assets/banner.jpg";
 import { FaEnvelope, FaFlag, FaLocationDot, FaPerson } from "react-icons/fa6";
 import { BiCategory } from "react-icons/bi";
 import BeAVolunteerModal from "./BeAVolunteerModal";
+import { Helmet } from "react-helmet-async";
 
 const PostDetail = () => {
   const handleOpenModal = () => {
@@ -10,6 +11,9 @@ const PostDetail = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | Post Details</title>
+      </Helmet>
       <NavbarBg></NavbarBg>
       <div className="h-[750px]  max-w-7xl mx-auto rounded-2xl relative overflow-clip flex shadow-lg justify-center my-10 p-10 gap-10 bg-white ">
         <div className="h-full w-1/2">

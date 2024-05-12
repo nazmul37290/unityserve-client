@@ -5,9 +5,13 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../css/app.css";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 const ManageMyPost = () => {
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | Manage my posts</title>
+      </Helmet>
       <div>
         <NavbarBg></NavbarBg>
       </div>

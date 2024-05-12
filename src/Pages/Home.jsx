@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import banner from "../assets/banner.jpg";
 import Carousel from "../components/Carousel";
 import NavbarBg from "../components/NavbarBg";
@@ -6,6 +7,9 @@ import VolunteerNeedNow from "../sections/VolunteerNeedNow";
 const Home = () => {
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | HOME</title>
+      </Helmet>
       <NavbarBg
         img={banner}
         sectionTitle={"__________Making a difference_________"}

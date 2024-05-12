@@ -5,6 +5,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import logingif from "../../assets/ligin.json";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, setUser, updateUserProfile, logOut, user } =
@@ -55,6 +56,9 @@ const Register = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>UNITYSERVE | Register</title>
+      </Helmet>
       <NavbarBg></NavbarBg>
       <section className="bg-white h-[800px] dark:bg-gray-900">
         <div className="container flex items-center justify-center mt-20 px-6 mx-auto">

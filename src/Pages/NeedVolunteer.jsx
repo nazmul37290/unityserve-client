@@ -5,12 +5,16 @@ import { IoGridOutline } from "react-icons/io5";
 import { FaList } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../components/Navabr";
+import { Helmet } from "react-helmet-async";
 const NeedVolunteer = () => {
   const [cardView, setCardView] = useState(false);
   const theme = useContext(ThemeContext);
 
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | Need Volunteer</title>
+      </Helmet>
       <NavbarBg
         img={banner}
         sectionTitle={"_________Need Volunteer?________"}

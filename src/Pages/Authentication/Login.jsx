@@ -9,6 +9,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import logingif from "../../assets/loginpage.json";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -50,6 +51,9 @@ const Login = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | Login</title>
+      </Helmet>
       <NavbarBg></NavbarBg>
       <div>
         <div>

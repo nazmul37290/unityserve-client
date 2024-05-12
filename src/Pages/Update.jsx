@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import banner from "../assets/banner.jpg";
 import "react-datepicker/dist/react-datepicker.css";
 import NavbarBg from "../components/NavbarBg";
+import { Helmet } from "react-helmet-async";
 const Update = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
@@ -11,6 +12,9 @@ const Update = () => {
   const handleUpdate = () => {};
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | Update post</title>
+      </Helmet>
       <NavbarBg
         img={banner}
         sectionTitle={"__________Making a difference_________"}

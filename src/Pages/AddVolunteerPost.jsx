@@ -5,6 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 const AddVolunteerPost = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
@@ -43,6 +44,9 @@ const AddVolunteerPost = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>UNITYSERVE | Add volunteer</title>
+      </Helmet>
       <NavbarBg
         img={banner}
         sectionTitle={"__________Making a difference_________"}
