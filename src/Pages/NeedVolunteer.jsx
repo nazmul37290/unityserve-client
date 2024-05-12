@@ -126,7 +126,7 @@ const NeedVolunteer = () => {
                               </span>
                             </td>
                             <td>{volunteersNeeded}</td>
-                            <td>{deadline}</td>
+                            <td>{deadline.slice(0, 10)}</td>
                             <th>
                               <Link to={`/postDetails/${_id}`}>
                                 <button className="btn bg-light text-white btn-sm">

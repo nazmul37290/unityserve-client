@@ -185,7 +185,7 @@ const BeAVolunteerModal = ({ data }) => {
                 <input
                   name="deadline"
                   readOnly
-                  value={deadline}
+                  value={deadline.slice(0, 10)}
                   type="text"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   placeholder="deadline"

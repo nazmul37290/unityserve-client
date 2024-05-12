@@ -75,7 +75,7 @@ const PostDetail = () => {
             <span className="font-bold">{volunteersNeeded}</span>
           </p>
           <p className="mt-2 font-bold">
-            Deadline: <span>{deadline}</span>
+            Deadline: <span>{deadline.slice(0, 10)}</span>
           </p>
           <div className="mt-5">
             <p className="flex items-center gap-2">

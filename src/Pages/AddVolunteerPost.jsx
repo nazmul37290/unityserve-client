@@ -6,6 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
+import Swal from "sweetalert2";
 const AddVolunteerPost = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
@@ -40,7 +42,18 @@ const AddVolunteerPost = () => {
       location,
       deadline,
     };
+
     console.log(post);
+    axios.post(`${import.meta.env.VITE_URL}/posts`, post).then((result) => {
+      if (result.data.insertedId) {
+        form.reset();
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Post Added Successfully",
+        });
+      }
+    });
   };
   return (
     <div>
@@ -97,6 +110,7 @@ const AddVolunteerPost = () => {
                       Post Title
                     </label>
                     <input
+                      required
                       name="title"
                       type="text"
                       placeholder="post title"
@@ -108,6 +122,7 @@ const AddVolunteerPost = () => {
                       Thumbnail Url
                     </label>
                     <input
+                      required
                       name="thumbnailUrl"
                       type="text"
                       placeholder="Thumbnail URL"
@@ -119,6 +134,7 @@ const AddVolunteerPost = () => {
                       Location
                     </label>
                     <input
+                      required
                       name="location"
                       type="text"
                       placeholder="Location"
@@ -133,6 +149,7 @@ const AddVolunteerPost = () => {
                       className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                       name="category"
                       id=""
+                      required
                     >
                       <option value="Healthcare">Healthcare</option>
                       <option value="Education">Education</option>
@@ -145,6 +162,7 @@ const AddVolunteerPost = () => {
                       No. of volunteer needed
                     </label>
                     <input
+                      required
                       name="volunteerCount"
                       type="number"
                       placeholder="volunteer count"
@@ -157,6 +175,7 @@ const AddVolunteerPost = () => {
                     </label>
                     <br />
                     <DatePicker
+                      required
                       className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                       showIcon
                       selected={startDate}
@@ -171,6 +190,7 @@ const AddVolunteerPost = () => {
                       Description
                     </label>
                     <textarea
+                      required
                       name="description"
                       id="bio"
                       placeholder="Description"

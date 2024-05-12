@@ -34,7 +34,7 @@ const VolunteerCard = ({ post }) => {
               {category}
             </h1>
             <h1 className="text-sm font-bold text-gray-700 dark:text-gray-200 md:text-sm">
-              Deadline: <span>{deadline}</span>
+              Deadline: <span>{deadline.slice(0, 10)}</span>
             </h1>
           </div>
 
