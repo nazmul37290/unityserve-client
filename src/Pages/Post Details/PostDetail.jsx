@@ -5,6 +5,7 @@ import { BiCategory } from "react-icons/bi";
 import BeAVolunteerModal from "./BeAVolunteerModal";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const PostDetail = () => {
   const { data } = useLoaderData();
@@ -22,6 +23,13 @@ const PostDetail = () => {
   } = data;
 
   const handleOpenModal = () => {
+    if (volunteersNeeded == 0) {
+      return Swal.fire({
+        icon: "error",
+        title: "Sorry!!",
+        text: "Volunteer Need over",
+      });
+    }
     document.getElementById("my_modal_2").showModal();
   };
   return (
