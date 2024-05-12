@@ -5,11 +5,68 @@ import banner from "../assets/banner.jpg";
 import "react-datepicker/dist/react-datepicker.css";
 import NavbarBg from "../components/NavbarBg";
 import { Helmet } from "react-helmet-async";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Swal from "sweetalert2";
 const Update = () => {
+  const navigate = useNavigate();
+  const { data } = useLoaderData();
+  console.log(data);
+  const {
+    _id,
+    category,
+    deadline,
+    description,
+    location,
+    thumbnail,
+    organizer,
+    title,
+    volunteersNeeded,
+  } = data;
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
 
-  const handleUpdate = () => {};
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.username.value;
+    const email = form.userEmail.value;
+    const title = form.title.value;
+    const thumbnail = form.thumbnailUrl.value;
+
+    const description = form.description.value;
+    const category = form.category.value;
+    const volunteersNeeded = parseInt(form.volunteerCount.value);
+    const location = form.location.value;
+    const deadline = startDate;
+
+    const post = {
+      organizer: { name, email },
+      title,
+      thumbnail,
+      description,
+      category,
+      volunteersNeeded,
+      location,
+      deadline,
+    };
+
+    console.log(post);
+
+    axios
+      .put(`${import.meta.env.VITE_URL}/posts/${_id}`, post)
+      .then((result) => {
+        console.log(result.data);
+        if (result.data.modifiedCount) {
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Post Added Successfully",
+          });
+          navigate("/manageMyPost");
+        }
+      });
+  };
   return (
     <div>
       <Helmet>
@@ -65,6 +122,7 @@ const Update = () => {
                       Post Title
                     </label>
                     <input
+                      defaultValue={title}
                       name="title"
                       type="text"
                       placeholder="post title"
@@ -76,6 +134,7 @@ const Update = () => {
                       Thumbnail Url
                     </label>
                     <input
+                      defaultValue={thumbnail}
                       name="thumbnailUrl"
                       type="text"
                       placeholder="Thumbnail URL"
@@ -87,6 +146,7 @@ const Update = () => {
                       Location
                     </label>
                     <input
+                      defaultValue={location}
                       name="location"
                       type="text"
                       placeholder="Location"
@@ -98,6 +158,7 @@ const Update = () => {
                       Category
                     </label>
                     <select
+                      defaultValue={category}
                       className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                       name="category"
                       id=""
@@ -113,6 +174,7 @@ const Update = () => {
                       No. of volunteer needed
                     </label>
                     <input
+                      defaultValue={volunteersNeeded}
                       name="volunteerCount"
                       type="number"
                       placeholder="volunteer count"
@@ -127,7 +189,7 @@ const Update = () => {
                     <DatePicker
                       className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                       showIcon
-                      selected={startDate}
+                      selected={deadline.slice(0, 10)}
                       dateFormat="d/ M/ yyyy"
                       onChange={(date) => setStartDate(date)}
                     />
@@ -139,6 +201,7 @@ const Update = () => {
                       Description
                     </label>
                     <textarea
+                      defaultValue={description}
                       name="description"
                       id="bio"
                       placeholder="Description"

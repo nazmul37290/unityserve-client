@@ -62,7 +62,7 @@ const ManageMyPost = () => {
               const newRequests = myVolunteerRequests.filter(
                 (post) => post._id != id
               );
-              myVolunteerRequests(newRequests);
+              setMyVolunteerRequests(newRequests);
               Swal.fire({
                 title: "Deleted!",
                 text: "Your file has been deleted.",
@@ -171,7 +171,7 @@ const ManageMyPost = () => {
                                 <p>{volunteersNeeded}</p>
                               </td>
                               <td className="p-3 text-right">
-                                <Link to={"/updatePost"}>
+                                <Link to={`/updatePost/${_id}`}>
                                   <button className="px-3 py-1 font-semibold rounded-md bg-light text-gray-50">
                                     <span className="flex items-center">
                                       Update <MdEdit></MdEdit>
@@ -193,11 +193,11 @@ const ManageMyPost = () => {
                           );
                         })
                       ) : (
-                        <div className="mt-10">
-                          <h1 className="text-center text-xl">
+                        <tr className="mt-10">
+                          <td colSpan={7} className="text-center p-10 text-xl">
                             You have not posted for any volunteer yet !!!
-                          </h1>
-                        </div>
+                          </td>
+                        </tr>
                       )}
                     </tbody>
                   </table>
@@ -281,11 +281,11 @@ const ManageMyPost = () => {
                           );
                         })
                       ) : (
-                        <div className="mt-10">
-                          <h1 className="text-center text-xl">
-                            You have not requested for any volunteer !!!
-                          </h1>
-                        </div>
+                        <tr className="mt-10">
+                          <td colSpan={6} className="text-center p-10 text-xl">
+                            You have not requested for any volunteer yet !!!
+                          </td>
+                        </tr>
                       )}
                     </tbody>
                   </table>

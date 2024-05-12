@@ -102,40 +102,38 @@ const NeedVolunteer = () => {
                         volunteersNeeded,
                       } = post;
                       return (
-                        <>
-                          <tr className="text-center">
-                            <td>
-                              <div className="flex items-center gap-3">
-                                <div className="avatar">
-                                  <div className="mask mask-squircle w-12 h-12">
-                                    <img
-                                      src={thumbnail}
-                                      alt="Avatar Tailwind CSS Component"
-                                    />
-                                  </div>
-                                </div>
-                                <div>
-                                  <div className="font-bold">{title}</div>
+                        <tr key={_id} className="text-center">
+                          <td>
+                            <div className="flex items-center gap-3">
+                              <div className="avatar">
+                                <div className="mask mask-squircle w-12 h-12">
+                                  <img
+                                    src={thumbnail}
+                                    alt="Avatar Tailwind CSS Component"
+                                  />
                                 </div>
                               </div>
-                            </td>
-                            <td>
-                              {" "}
-                              <span className="bg-main text-white p-2 rounded-lg">
-                                {category}
-                              </span>
-                            </td>
-                            <td>{volunteersNeeded}</td>
-                            <td>{deadline.slice(0, 10)}</td>
-                            <th>
-                              <Link to={`/postDetails/${_id}`}>
-                                <button className="btn bg-light text-white btn-sm">
-                                  View Details
-                                </button>
-                              </Link>
-                            </th>
-                          </tr>
-                        </>
+                              <div>
+                                <div className="font-bold">{title}</div>
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            {" "}
+                            <span className="bg-main text-white p-2 rounded-lg">
+                              {category}
+                            </span>
+                          </td>
+                          <td>{volunteersNeeded}</td>
+                          <td>{deadline.slice(0, 10)}</td>
+                          <th>
+                            <Link to={`/postDetails/${_id}`}>
+                              <button className="btn bg-light text-white btn-sm">
+                                View Details
+                              </button>
+                            </Link>
+                          </th>
+                        </tr>
                       );
                     })}
                   </tbody>

@@ -63,12 +63,14 @@ const Routes = createBrowserRouter([
         ),
       },
       {
-        path: "/updatePost",
+        path: "/updatePost/:id",
         element: (
           <PrivateRoute>
             <Update></Update>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`),
       },
     ],
   },
