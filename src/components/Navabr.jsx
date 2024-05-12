@@ -1,11 +1,13 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaLocationDot, FaPhoneVolume } from "react-icons/fa6";
 import "../css/app.css";
-import { useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
 
+export const ThemeContext = createContext();
 const Navabr = () => {
+  const [theme, SetTheme] = useState("light");
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogOut = () => {
@@ -14,6 +16,15 @@ const Navabr = () => {
     navigate("/login");
   };
   console.log(user);
+
+  const handleToggleTheme = (e) => {
+    if (e.target.checked) {
+      SetTheme("light");
+    } else {
+      SetTheme("forest");
+    }
+    document.querySelector("html").setAttribute("data-theme", theme);
+  };
   return (
     <div className="w-full z-50  text-gray-300 absolute">
       <footer className="footer max-w-7xl mx-auto items-center p-4 ">
@@ -95,8 +106,9 @@ const Navabr = () => {
             >
               <label className="cursor-pointer grid place-items-center">
                 <input
+                  onChange={handleToggleTheme}
                   type="checkbox"
-                  value=""
+                  value="forest"
                   className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
                 />
                 <svg
@@ -238,13 +250,13 @@ const Navabr = () => {
                   <li className="hover:bg-middle hover:text-white rounded-xl">
                     <NavLink
                       to={"/manageMyPost"}
-                      className={({ isActive, isPending }) =>
+                      className={({ isActive, isPending }) => {
                         isActive
                           ? "bg-light text-white rounded-full"
                           : isPending
                           ? ""
-                          : ""
-                      }
+                          : "";
+                      }}
                     >
                       Manage My post
                     </NavLink>
@@ -256,10 +268,11 @@ const Navabr = () => {
         </div>
         <div className="navbar-end">
           <div className="hidden lg:flex">
-            <label className="cursor-pointer  grid place-items-center">
+            <label className="cursor-pointer mr-3 grid place-items-center">
               <input
+                onChange={handleToggleTheme}
                 type="checkbox"
-                value="synthwave"
+                value="forest"
                 className="toggle theme-controller bg-base-content row-start-1 col-start-1 col-span-2"
               />
               <svg

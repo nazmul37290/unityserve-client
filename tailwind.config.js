@@ -16,5 +16,8 @@ export default {
       light: "#269c03",
     },
   },
+  daisyui: {
+    themes: ["light", "forest"],
+  },
   plugins: [require("daisyui"), require("flowbite/plugin")],
 };

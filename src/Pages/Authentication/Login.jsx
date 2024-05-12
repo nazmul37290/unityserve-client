@@ -12,8 +12,12 @@ import logingif from "../../assets/loginpage.json";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { loginWithEmailandPassword, signInWithGoogle } =
+  const { loginWithEmailandPassword, signInWithGoogle, user } =
     useContext(AuthContext);
+
+  if (user) {
+    navigate("/");
+  }
   const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -43,6 +47,7 @@ const Login = () => {
         console.log(error);
       });
   };
+
   return (
     <div>
       <NavbarBg></NavbarBg>

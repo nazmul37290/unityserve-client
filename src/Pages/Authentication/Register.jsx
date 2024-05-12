@@ -7,10 +7,14 @@ import Lottie from "lottie-react";
 import logingif from "../../assets/ligin.json";
 
 const Register = () => {
-  const { createUser, setUser, updateUserProfile, logOut } =
+  const { createUser, setUser, updateUserProfile, logOut, user } =
     useContext(AuthContext);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  if (user) {
+    navigate("/");
+  }
   const handleRegister = async (e) => {
     e.preventDefault();
     const form = e.target;

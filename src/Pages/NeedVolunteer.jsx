@@ -3,9 +3,12 @@ import banner from "../assets/banner.jpg";
 import VolunteerCard from "../components/VolunteerCard";
 import { IoGridOutline } from "react-icons/io5";
 import { FaList } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../components/Navabr";
 const NeedVolunteer = () => {
   const [cardView, setCardView] = useState(false);
+  const theme = useContext(ThemeContext);
+
   return (
     <div>
       <NavbarBg
@@ -67,9 +70,13 @@ const NeedVolunteer = () => {
         ) : (
           <>
             {/* table container here */}
-            <div className="max-w-7xl mt-20 mx-auto">
+            <div
+              className={`max-w-7xl mt-20 mx-auto ${
+                theme === "forest" ? "bg-red-500" : "bg-white"
+              } `}
+            >
               <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table ">
                   {/* head */}
                   <thead>
                     <tr className="text-center">

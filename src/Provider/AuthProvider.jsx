@@ -51,6 +51,8 @@ const AuthProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // FUNCTION FOR THEME
+
   const authInfo = {
     user,
     createUser,

@@ -9,6 +9,7 @@ import PostDetail from "../Pages/Post Details/PostDetail";
 import ErrorPage from "../Pages/ErrorPage";
 import ManageMyPost from "../Pages/ManageMyPost";
 import Update from "../Pages/Update";
+import PrivateRoute from "./PrivateRoute";
 
 const Routes = createBrowserRouter([
   {
@@ -23,7 +24,11 @@ const Routes = createBrowserRouter([
 
       {
         path: "/needVolunteer",
-        element: <NeedVolunteer></NeedVolunteer>,
+        element: (
+          <PrivateRoute>
+            <NeedVolunteer></NeedVolunteer>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
