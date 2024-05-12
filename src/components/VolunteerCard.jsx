@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import bannerImg from "../assets/banner.jpeg";
+
 const VolunteerCard = ({ post }) => {
   const {
     _id,

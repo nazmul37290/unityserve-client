@@ -26,6 +26,7 @@ const Routes = createBrowserRouter([
       {
         path: "/needVolunteer",
         element: <NeedVolunteer></NeedVolunteer>,
+        loader: () => axios(`${import.meta.env.VITE_URL}/posts`),
       },
       {
         path: "/login",
@@ -37,7 +38,11 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/addVolunteerNeedPost",
-        element: <AddVolunteerPost></AddVolunteerPost>,
+        element: (
+          <PrivateRoute>
+            <AddVolunteerPost></AddVolunteerPost>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/postDetails/:id",
@@ -47,15 +52,23 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          axios(`http://localhost:4000/postDetails/${params.id}`),
+          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`),
       },
       {
         path: "/manageMyPost",
-        element: <ManageMyPost></ManageMyPost>,
+        element: (
+          <PrivateRoute>
+            <ManageMyPost></ManageMyPost>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/updatePost",
-        element: <Update></Update>,
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
       },
     ],
   },

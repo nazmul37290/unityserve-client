@@ -6,9 +6,11 @@ import { FaList } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../components/Navabr";
 import { Helmet } from "react-helmet-async";
+import { Link, useLoaderData } from "react-router-dom";
 const NeedVolunteer = () => {
   const [cardView, setCardView] = useState(false);
   const theme = useContext(ThemeContext);
+  const { data } = useLoaderData();
 
   return (
     <div>
@@ -57,18 +59,13 @@ const NeedVolunteer = () => {
           <>
             {/* cards container here */}
             <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-16">
-              <div className="flex items-center justify-center">
-                <VolunteerCard></VolunteerCard>
-              </div>
-              <div className="flex items-center justify-center">
-                <VolunteerCard></VolunteerCard>
-              </div>
-              <div className="flex items-center justify-center">
-                <VolunteerCard></VolunteerCard>
-              </div>
-              <div className="flex items-center justify-center">
-                <VolunteerCard></VolunteerCard>
-              </div>
+              {data?.map((post, i) => {
+                return (
+                  <div key={i} className="flex items-center justify-center">
+                    <VolunteerCard post={post}></VolunteerCard>
+                  </div>
+                );
+              })}
             </div>
           </>
         ) : (
@@ -86,36 +83,61 @@ const NeedVolunteer = () => {
                     <tr className="text-center">
                       <th>Title</th>
                       <th>Category</th>
+                      <th>No of Volunteer need</th>
                       <th>Deadline</th>
                       <th></th>
                     </tr>
                   </thead>
                   <tbody>
-                    {/* row 1 */}
-                    <tr className="text-center">
-                      <td>
-                        <div className="flex items-center gap-3">
-                          <div className="avatar">
-                            <div className="mask mask-squircle w-12 h-12">
-                              <img
-                                src="https://img.daisyui.com/tailwind-css-component-profile-2@56w.png"
-                                alt="Avatar Tailwind CSS Component"
-                              />
-                            </div>
-                          </div>
-                          <div>
-                            <div className="font-bold">Hart Hagerty</div>
-                          </div>
-                        </div>
-                      </td>
-                      <td>Category</td>
-                      <td>Purple</td>
-                      <th>
-                        <button className="btn bg-light text-white btn-sm">
-                          View Details
-                        </button>
-                      </th>
-                    </tr>
+                    {data.map((post) => {
+                      const {
+                        _id,
+                        category,
+                        deadline,
+                        description,
+                        location,
+                        thumbnail,
+                        organizer,
+                        title,
+                        volunteersNeeded,
+                      } = post;
+                      return (
+                        <>
+                          <tr className="text-center">
+                            <td>
+                              <div className="flex items-center gap-3">
+                                <div className="avatar">
+                                  <div className="mask mask-squircle w-12 h-12">
+                                    <img
+                                      src={thumbnail}
+                                      alt="Avatar Tailwind CSS Component"
+                                    />
+                                  </div>
+                                </div>
+                                <div>
+                                  <div className="font-bold">{title}</div>
+                                </div>
+                              </div>
+                            </td>
+                            <td>
+                              {" "}
+                              <span className="bg-main text-white p-2 rounded-lg">
+                                {category}
+                              </span>
+                            </td>
+                            <td>{volunteersNeeded}</td>
+                            <td>{deadline}</td>
+                            <th>
+                              <Link to={`/postDetails/${_id}`}>
+                                <button className="btn bg-light text-white btn-sm">
+                                  View Details
+                                </button>
+                              </Link>
+                            </th>
+                          </tr>
+                        </>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
