@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import bannerImg from "../assets/banner.jpeg";
 const VolunteerCard = ({ post }) => {
   const {
+    _id,
     category,
     deadline,
     description,
@@ -38,7 +39,7 @@ const VolunteerCard = ({ post }) => {
           </div>
 
           <div className="flex justify-between mt-3 item-center">
-            <Link>
+            <Link to={`/postDetails/${_id}`}>
               <button className="px-2 py-1 text-xs font-bold text-white bg-light uppercase transition-colors duration-300 transform rounded dark:bg-gray-700 hover:bg-gray-700 dark:hover:bg-gray-600 focus:outline-none focus:bg-gray-700 dark:focus:bg-gray-600">
                 View Details
               </button>

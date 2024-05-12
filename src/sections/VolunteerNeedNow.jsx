@@ -20,14 +20,15 @@ const VolunteerNeedNow = () => {
       </h1>
       <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-16">
         {posts.map((post) => {
-          return <VolunteerCard key={post._id} post={post}></VolunteerCard>;
-          // <div className="flex justify-center items-center">
-          //
-          // </div>
+          return (
+            <div key={post._id} className="flex justify-center items-center">
+              <VolunteerCard post={post}></VolunteerCard>;
+            </div>
+          );
         })}
       </div>
       <div className="flex justify-center mt-16">
-        <Link>
+        <Link to={"/needVolunteer"}>
           <button className="border-2 text-white font-bold hover:bg-white hover:text-middle  border-white rounded-full py-2 px-6 flex items-center gap-2">
             See All{" "}
             <span>

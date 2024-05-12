@@ -10,6 +10,7 @@ import ErrorPage from "../Pages/ErrorPage";
 import ManageMyPost from "../Pages/ManageMyPost";
 import Update from "../Pages/Update";
 import PrivateRoute from "./PrivateRoute";
+import axios from "axios";
 
 const Routes = createBrowserRouter([
   {
@@ -24,11 +25,7 @@ const Routes = createBrowserRouter([
 
       {
         path: "/needVolunteer",
-        element: (
-          <PrivateRoute>
-            <NeedVolunteer></NeedVolunteer>
-          </PrivateRoute>
-        ),
+        element: <NeedVolunteer></NeedVolunteer>,
       },
       {
         path: "/login",
@@ -43,8 +40,14 @@ const Routes = createBrowserRouter([
         element: <AddVolunteerPost></AddVolunteerPost>,
       },
       {
-        path: "/postDetails",
-        element: <PostDetail></PostDetail>,
+        path: "/postDetails/:id",
+        element: (
+          <PrivateRoute>
+            <PostDetail></PostDetail>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          axios(`http://localhost:4000/postDetails/${params.id}`),
       },
       {
         path: "/manageMyPost",
