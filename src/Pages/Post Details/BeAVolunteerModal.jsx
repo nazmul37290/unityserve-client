@@ -3,10 +3,11 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import NeedVolunteer from "../NeedVolunteer";
 
 const BeAVolunteerModal = ({ data }) => {
   const { user } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const {
     _id,
     category,
@@ -57,12 +58,18 @@ const BeAVolunteerModal = ({ data }) => {
       .then((result) => {
         if (result.data.insertedId) {
           form.reset();
-          document.getElementById("close-btn").click();
-          Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: "Volunteer Requested Successfully",
-          });
+
+          axios
+            .patch(`${import.meta.env.VITE_URL}/beAVolunteer/${_id}`)
+            .then((result) => {
+              document.getElementById("close-btn").click();
+              Swal.fire({
+                icon: "success",
+                title: "Success",
+                text: "Volunteer Requested Successfully",
+              });
+              navigate(`/postDetails/${_id}`);
+            });
         }
       });
   };

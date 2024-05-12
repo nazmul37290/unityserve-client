@@ -19,7 +19,7 @@ const VolunteerNeedNow = () => {
         Volunteer Need Now
       </h1>
       <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-16">
-        {posts.map((post) => {
+        {posts?.slice(0, 6).map((post) => {
           return (
             <div key={post._id} className="flex justify-center items-center">
               <VolunteerCard post={post}></VolunteerCard>;
