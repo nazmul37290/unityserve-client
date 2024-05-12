@@ -1,20 +1,35 @@
-const BeAVolunteerModal = () => {
-  const handleBeAVolunteer = () => {};
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+
+const BeAVolunteerModal = ({ data }) => {
+  const { user } = useContext(AuthContext);
+  const {
+    _id,
+    category,
+    deadline,
+    description,
+    location,
+    thumbnail,
+    organizer,
+    title,
+    volunteersNeeded,
+  } = data;
+  const handleReqVolunteer = () => {};
   return (
     <dialog id="my_modal_2" className="modal">
       <div className="modal-box">
         <form
-          onSubmit={handleBeAVolunteer}
+          onSubmit={handleReqVolunteer}
           className="container flex flex-col mx-auto space-y-12"
         >
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
             <div className="grid grid-cols-6 gap-4 col-span-full ">
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sm">
-                  Name
+                  Organizer Name
                 </label>
                 <input
-                  //   value={user?.displayName}
+                  value={organizer.name}
                   readOnly
                   name="username"
                   id=""
@@ -24,10 +39,10 @@ const BeAVolunteerModal = () => {
               </div>
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="lastname" className="text-sm">
-                  Email
+                  Organizer Email
                 </label>
                 <input
-                  //   value={user?.email}
+                  value={organizer.email}
                   readOnly
                   name="userEmail"
                   id=""
@@ -40,6 +55,8 @@ const BeAVolunteerModal = () => {
                   Post Title
                 </label>
                 <input
+                  readOnly
+                  value={title}
                   name="title"
                   type="text"
                   placeholder="post title"
@@ -51,6 +68,8 @@ const BeAVolunteerModal = () => {
                   Thumbnail Url
                 </label>
                 <input
+                  readOnly
+                  value={thumbnail}
                   name="thumbnailUrl"
                   type="text"
                   placeholder="Thumbnail URL"
@@ -62,6 +81,8 @@ const BeAVolunteerModal = () => {
                   Location
                 </label>
                 <input
+                  readOnly
+                  value={location}
                   name="location"
                   type="text"
                   placeholder="Location"
@@ -73,6 +94,8 @@ const BeAVolunteerModal = () => {
                   Category
                 </label>
                 <select
+                  readOnly
+                  value={category}
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   name="category"
                   id=""
@@ -88,6 +111,8 @@ const BeAVolunteerModal = () => {
                   No. of volunteer needed
                 </label>
                 <input
+                  readOnly
+                  value={volunteersNeeded}
                   name="volunteerCount"
                   type="number"
                   placeholder="volunteer count"
@@ -100,6 +125,8 @@ const BeAVolunteerModal = () => {
                 </label>
                 <br />
                 <input
+                  readOnly
+                  value={deadline}
                   type="text"
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   placeholder="deadline"
@@ -112,6 +139,8 @@ const BeAVolunteerModal = () => {
                   Description
                 </label>
                 <textarea
+                  value={description}
+                  readOnly
                   name="description"
                   id="bio"
                   placeholder="Description"
@@ -123,6 +152,8 @@ const BeAVolunteerModal = () => {
                   Volunteer name
                 </label>
                 <input
+                  readOnly
+                  value={user?.displayName}
                   name="volunteerName"
                   type="text"
                   placeholder=""
@@ -134,6 +165,8 @@ const BeAVolunteerModal = () => {
                   Volunteer email
                 </label>
                 <input
+                  readOnly
+                  value={user?.email}
                   name="volunteerEmail"
                   type="email"
                   placeholder=""

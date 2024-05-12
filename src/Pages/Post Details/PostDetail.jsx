@@ -89,7 +89,7 @@ const PostDetail = () => {
           </div>
         </div>
       </div>
-      <BeAVolunteerModal id="my_modal_1"></BeAVolunteerModal>
+      <BeAVolunteerModal id="my_modal_1" data={data}></BeAVolunteerModal>
     </div>
   );
 };
