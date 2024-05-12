@@ -33,7 +33,7 @@ const BeAVolunteerModal = ({ data }) => {
 
     const description = form.description.value;
     const category = form.category.value;
-    const volunteerCount = form.volunteerCount.value;
+    const volunteersNeeded = form.volunteerCount.value;
     const location = form.location.value;
     const deadline = form.deadline.value;
 
@@ -43,7 +43,7 @@ const BeAVolunteerModal = ({ data }) => {
       thumbnail,
       description,
       category,
-      volunteerCount,
+      volunteersNeeded,
       location,
       deadline,
       volunteerName,

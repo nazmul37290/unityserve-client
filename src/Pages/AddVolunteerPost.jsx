@@ -28,7 +28,7 @@ const AddVolunteerPost = () => {
 
     const description = form.description.value;
     const category = form.category.value;
-    const volunteerCount = form.volunteerCount.value;
+    const volunteersNeeded = form.volunteerCount.value;
     const location = form.location.value;
     const deadline = startDate;
 
@@ -38,7 +38,7 @@ const AddVolunteerPost = () => {
       thumbnail,
       description,
       category,
-      volunteerCount,
+      volunteersNeeded,
       location,
       deadline,
     };
