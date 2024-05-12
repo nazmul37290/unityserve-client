@@ -19,8 +19,8 @@ const AddVolunteerPost = () => {
   const handleAddPost = (e) => {
     e.preventDefault();
     const form = e.target;
-    const username = form.username.value;
-    const userEmail = form.userEmail.value;
+    const name = form.username.value;
+    const email = form.userEmail.value;
     const title = form.title.value;
     const thumbnail = form.thumbnailUrl.value;
 
@@ -31,7 +31,7 @@ const AddVolunteerPost = () => {
     const deadline = startDate;
 
     const post = {
-      organizer: { username, userEmail },
+      organizer: { name, email },
       title,
       thumbnail,
       description,

@@ -1,8 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 const BeAVolunteerModal = ({ data }) => {
   const { user } = useContext(AuthContext);
+
   const {
     _id,
     category,
@@ -14,9 +18,56 @@ const BeAVolunteerModal = ({ data }) => {
     title,
     volunteersNeeded,
   } = data;
-  const handleReqVolunteer = () => {};
+  const handleReqVolunteer = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.username.value;
+    const email = form.userEmail.value;
+    const title = form.title.value;
+    const thumbnail = form.thumbnailUrl.value;
+    const volunteerName = form.volunteerName.value;
+    const volunteerEmail = form.volunteerEmail.value;
+    const suggestion = form.suggestion.value;
+    const status = form.status.value;
+
+    const description = form.description.value;
+    const category = form.category.value;
+    const volunteerCount = form.volunteerCount.value;
+    const location = form.location.value;
+    const deadline = form.deadline.value;
+
+    const volunteer = {
+      organizer: { name, email },
+      title,
+      thumbnail,
+      description,
+      category,
+      volunteerCount,
+      location,
+      deadline,
+      volunteerName,
+      volunteerEmail,
+      suggestion,
+      status,
+    };
+    console.log(volunteer);
+
+    axios
+      .post(`${import.meta.env.VITE_URL}/beAVolunteer`, volunteer)
+      .then((result) => {
+        if (result.data.insertedId) {
+          form.reset();
+          document.getElementById("close-btn").click();
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Volunteer Requested Successfully",
+          });
+        }
+      });
+  };
   return (
-    <dialog id="my_modal_2" className="modal">
+    <dialog id="my_modal_2" className="modal ">
       <div className="modal-box">
         <form
           onSubmit={handleReqVolunteer}
@@ -125,6 +176,7 @@ const BeAVolunteerModal = ({ data }) => {
                 </label>
                 <br />
                 <input
+                  name="deadline"
                   readOnly
                   value={deadline}
                   type="text"
@@ -189,9 +241,10 @@ const BeAVolunteerModal = ({ data }) => {
                   Status
                 </label>
                 <input
+                  readOnly
                   value={"Requested"}
-                  name="volunteerEmail"
-                  type="email"
+                  name="status"
+                  type="text"
                   placeholder=""
                   className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
@@ -206,7 +259,9 @@ const BeAVolunteerModal = ({ data }) => {
         </form>
         <div className="modal-action">
           <form method="dialog">
-            <button className="btn">Close</button>
+            <button className="btn" id="close-btn">
+              Close
+            </button>
           </form>
         </div>
       </div>
