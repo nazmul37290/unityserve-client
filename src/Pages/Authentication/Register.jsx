@@ -44,9 +44,9 @@ const Register = () => {
             Swal.fire({
               icon: "success",
               title: "Success",
-              text: "Registered Successfully",
+              text: "Registered Successfully, login to account now ",
             });
-            navigate("/");
+            navigate("/login");
           });
         });
       })

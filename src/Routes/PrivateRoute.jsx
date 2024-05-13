@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { child } from "firebase/database";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import NavbarBg from "../components/NavbarBg";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(location);
   if (loading) {
     return (
       <>
@@ -20,7 +22,7 @@ const PrivateRoute = ({ children }) => {
   if (user) {
     return children;
   } else {
-    return <Navigate to={"/login"}></Navigate>;
+    return <Navigate to={"/login"} state={location.pathname}></Navigate>;
   }
 };
 

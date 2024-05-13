@@ -3,7 +3,7 @@ import NavbarBg from "../../components/NavbarBg";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "../../css/app.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -13,12 +13,13 @@ import { Helmet } from "react-helmet-async";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location.state);
   const { loginWithEmailandPassword, signInWithGoogle, user } =
     useContext(AuthContext);
-
-  if (user) {
-    navigate("/");
-  }
+  // if (user) {
+  //   navigate("/");
+  // }
   const handleLogin = async (e) => {
     e.preventDefault();
     const form = e.target;
@@ -30,7 +31,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         toast.success("Logged in successfully");
-        navigate("/");
+        navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
@@ -42,7 +43,11 @@ const Login = () => {
       .then((result) => {
         toast.success("Logged in successfully");
         console.log(result.user);
-        navigate("/");
+        if (location.state) {
+          navigate(location.state);
+        } else {
+          navigate("/");
+        }
       })
       .catch((error) => {
         console.log(error);

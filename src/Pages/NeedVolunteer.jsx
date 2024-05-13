@@ -7,10 +7,23 @@ import { useContext, useState } from "react";
 import { ThemeContext } from "../components/Navabr";
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
+import axios from "axios";
 const NeedVolunteer = () => {
+  const { data } = useLoaderData();
+  const [allData, setALlData] = useState(data);
   const [cardView, setCardView] = useState(false);
   const theme = useContext(ThemeContext);
-  const { data } = useLoaderData();
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const search = e.target.search.value;
+    console.log(search);
+    axios(`http://localhost:4000/posts?title=${search}`).then((result) => {
+      console.log(result.data);
+      setALlData(result.data);
+    });
+  };
+  console.log(allData);
 
   return (
     <div>
@@ -27,21 +40,24 @@ const NeedVolunteer = () => {
           Need Volunteer
         </h1>
         <div className="max-w-7xl mx-auto flex items-center justify-end mt-2">
-          <label className="w-1/4  input input-bordered flex mr-2 items-center gap-2">
-            <input type="text" className="grow" placeholder="Search" />
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="currentColor"
-              className="w-4 h-4 opacity-70"
-            >
-              <path
-                fillRule="evenodd"
-                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-                clipRule="evenodd"
+          <form onSubmit={handleSearch}>
+            <label className="w-full rounded-lg flex mr-2 items-center gap-2">
+              <input
+                type="text"
+                name="search"
+                className=""
+                placeholder="Search"
               />
-            </svg>
-          </label>
+              <input
+                type="submit"
+                className="btn bg-light rounded-lg text-white"
+                value="search"
+              />
+            </label>
+          </form>
+          <button onClick={() => setALlData(data)} className="btn">
+            Reset
+          </button>
           <div>
             <button onClick={() => setCardView(true)} className="text-3xl mx-3">
               <IoGridOutline />
@@ -59,7 +75,7 @@ const NeedVolunteer = () => {
           <>
             {/* cards container here */}
             <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-16">
-              {data?.map((post, i) => {
+              {allData?.map((post, i) => {
                 return (
                   <div key={i} className="flex items-center justify-center">
                     <VolunteerCard post={post}></VolunteerCard>
@@ -89,7 +105,7 @@ const NeedVolunteer = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {data.map((post) => {
+                    {allData?.map((post) => {
                       const {
                         _id,
                         category,
