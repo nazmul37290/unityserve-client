@@ -18,10 +18,12 @@ const NeedVolunteer = () => {
     e.preventDefault();
     const search = e.target.search.value;
     console.log(search);
-    axios(`http://localhost:4000/posts?title=${search}`).then((result) => {
-      console.log(result.data);
-      setALlData(result.data);
-    });
+    axios(`${import.meta.env.VITE_URL}/posts?title=${search}`).then(
+      (result) => {
+        console.log(result.data);
+        setALlData(result.data);
+      }
+    );
   };
   console.log(allData);
 

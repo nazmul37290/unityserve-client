@@ -44,16 +44,20 @@ const AddVolunteerPost = () => {
     };
 
     console.log(post);
-    axios.post(`${import.meta.env.VITE_URL}/posts`, post).then((result) => {
-      if (result.data.insertedId) {
-        form.reset();
-        Swal.fire({
-          icon: "success",
-          title: "Success",
-          text: "Post Added Successfully",
-        });
-      }
-    });
+    axios
+      .post(`${import.meta.env.VITE_URL}/posts`, post, {
+        withCredentials: true,
+      })
+      .then((result) => {
+        if (result.data.insertedId) {
+          form.reset();
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+            text: "Post Added Successfully",
+          });
+        }
+      });
   };
   return (
     <div>

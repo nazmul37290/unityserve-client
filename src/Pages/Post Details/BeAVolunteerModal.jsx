@@ -54,13 +54,17 @@ const BeAVolunteerModal = ({ data }) => {
     console.log(volunteer);
 
     axios
-      .post(`${import.meta.env.VITE_URL}/beAVolunteer`, volunteer)
+      .post(`${import.meta.env.VITE_URL}/beAVolunteer`, volunteer, {
+        withCredentials: true,
+      })
       .then((result) => {
         if (result.data.insertedId) {
           form.reset();
 
           axios
-            .patch(`${import.meta.env.VITE_URL}/beAVolunteer/${_id}`)
+            .patch(`${import.meta.env.VITE_URL}/beAVolunteer/${_id}`, {
+              withCredentials: true,
+            })
             .then((result) => {
               document.getElementById("close-btn").click();
               Swal.fire({

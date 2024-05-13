@@ -10,6 +10,7 @@ import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import logingif from "../../assets/loginpage.json";
 import { Helmet } from "react-helmet-async";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,8 +31,19 @@ const Login = () => {
     loginWithEmailandPassword(email, password)
       .then((result) => {
         console.log(result.user);
+        const loggedUser = { email };
         toast.success("Logged in successfully");
-        navigate(location.state ? location.state : "/");
+        axios
+          .post(`${import.meta.env.VITE_URL}/jwt`, loggedUser, {
+            withCredentials: true,
+          })
+          .then((result) => {
+            console.log(result.data);
+            if (result.data.success) {
+              navigate(location.state ? location.state : "/");
+            }
+          });
+        // navigate(location.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);
@@ -43,11 +55,17 @@ const Login = () => {
       .then((result) => {
         toast.success("Logged in successfully");
         console.log(result.user);
-        if (location.state) {
-          navigate(location.state);
-        } else {
-          navigate("/");
-        }
+        const loggedUser = { email: result.user.email };
+        axios
+          .post(`${import.meta.env.VITE_URL}/jwt`, loggedUser, {
+            withCredentials: true,
+          })
+          .then((result) => {
+            console.log(result.data);
+            if (result.data.success) {
+              navigate(location.state ? location.state : "/");
+            }
+          });
       })
       .catch((error) => {
         console.log(error);

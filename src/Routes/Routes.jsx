@@ -52,7 +52,9 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`),
+          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`, {
+            withCredentials: true,
+          }),
       },
       {
         path: "/manageMyPost",
@@ -70,7 +72,9 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`),
+          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`, {
+            withCredentials: true,
+          }),
       },
     ],
   },

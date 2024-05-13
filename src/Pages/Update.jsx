@@ -54,7 +54,9 @@ const Update = () => {
     console.log(post);
 
     axios
-      .put(`${import.meta.env.VITE_URL}/posts/${_id}`, post)
+      .put(`${import.meta.env.VITE_URL}/posts/${_id}`, post, {
+        withCredentials: true,
+      })
       .then((result) => {
         console.log(result.data);
         if (result.data.modifiedCount) {

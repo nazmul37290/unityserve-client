@@ -27,7 +27,9 @@ const ManageMyPost = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`${import.meta.env.VITE_URL}/posts/${id}`)
+          .delete(`${import.meta.env.VITE_URL}/posts/${id}`, {
+            withCredentials: true,
+          })
           .then((result) => {
             console.log(result);
             if (result.data.deletedCount) {
@@ -55,7 +57,9 @@ const ManageMyPost = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`${import.meta.env.VITE_URL}/beAVolunteer/${id}`)
+          .delete(`${import.meta.env.VITE_URL}/beAVolunteer/${id}`, {
+            withCredentials: true,
+          })
           .then((result) => {
             console.log(result);
             if (result.data.deletedCount) {
@@ -76,7 +80,9 @@ const ManageMyPost = () => {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_URL}/posts?email=${user?.email}`)
+      .get(`${import.meta.env.VITE_URL}/myPosts?email=${user?.email}`, {
+        withCredentials: true,
+      })
       .then((result) => {
         setMyPosts(result.data);
       });
@@ -85,7 +91,10 @@ const ManageMyPost = () => {
   useEffect(() => {
     axios
 
-      .get(`${import.meta.env.VITE_URL}/volunteerRequests?email=${user?.email}`)
+      .get(
+        `${import.meta.env.VITE_URL}/volunteerRequests?email=${user?.email}`,
+        { withCredentials: true }
+      )
       .then((result) => {
         console.log(result.data);
         setMyVolunteerRequests(result.data);
