@@ -68,8 +68,8 @@ const ManageMyPost = () => {
               );
               setMyVolunteerRequests(newRequests);
               Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
+                title: "Canceled!",
+                text: "Your volunteer req has been canceled.",
                 icon: "success",
               });
             }
