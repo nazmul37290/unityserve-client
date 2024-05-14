@@ -146,7 +146,16 @@ const Navabr = () => {
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
               </label>
-
+              {user && (
+                <div className="h-10 w-10 m-2 rounded-full">
+                  <img
+                    title={user.displayName}
+                    className="w-full h-full rounded-full"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </div>
+              )}
               <li>
                 <NavLink
                   to={"/"}
@@ -198,6 +207,26 @@ const Navabr = () => {
                   </ul>
                 </details>
               </li>
+              {user ? (
+                <>
+                  <li>
+                    <button onClick={handleLogOut}>Logout</button>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <NavLink
+                      to={"/Login"}
+                      className={({ isActive, isPending }) =>
+                        isActive ? "bg-light text-white" : isPending ? "" : ""
+                      }
+                    >
+                      Login
+                    </NavLink>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
           <a className="btn btn-ghost gap-0 text-2xl">
@@ -271,8 +300,8 @@ const Navabr = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <div className="hidden lg:flex">
+        <div className="navbar-end hidden lg:flex">
+          <div className="">
             <label className="cursor-pointer mr-3 grid place-items-center">
               <input
                 onChange={handleToggleTheme}
