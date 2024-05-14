@@ -61,7 +61,11 @@ const Register = () => {
       <Helmet>
         <title>UNITYSERVE | Register</title>
       </Helmet>
-      <NavbarBg></NavbarBg>
+      <NavbarBg
+        img={"banner"}
+        sectionTitle={"__________Register Now_________"}
+        title={`Register Today to Explore Volunteer Opportunities and Create Lasting Change`}
+      ></NavbarBg>
       <section className="bg-white h-[800px] dark:bg-gray-900">
         <div className="container flex items-center justify-center mt-20 px-6 mx-auto">
           <div className="w-1/2">

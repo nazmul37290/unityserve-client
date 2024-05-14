@@ -110,7 +110,11 @@ const ManageMyPost = () => {
         <title>UNITYSERVE | Manage my posts</title>
       </Helmet>
       <div>
-        <NavbarBg></NavbarBg>
+        <NavbarBg
+          img={""}
+          sectionTitle={"__________Manage my Post_________"}
+          title={`Manage Your Volunteer Opportunities Effectively and Inspire Others to Take Action`}
+        ></NavbarBg>
       </div>
 
       <div className="max-w-7xl mx-auto min-h-screen">

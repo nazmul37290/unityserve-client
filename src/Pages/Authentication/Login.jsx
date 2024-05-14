@@ -79,7 +79,11 @@ const Login = () => {
       <Helmet>
         <title>UNITYSERVE | Login</title>
       </Helmet>
-      <NavbarBg></NavbarBg>
+      <NavbarBg
+        img={""}
+        sectionTitle={"__________Login_________"}
+        title={` Sign in to Access a World of Meaningful Volunteer Experiences`}
+      ></NavbarBg>
       <div>
         <div>
           <>

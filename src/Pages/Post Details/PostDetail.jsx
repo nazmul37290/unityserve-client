@@ -37,7 +37,11 @@ const PostDetail = () => {
       <Helmet>
         <title>UNITYSERVE | Post Details</title>
       </Helmet>
-      <NavbarBg></NavbarBg>
+      <NavbarBg
+        img={banner}
+        sectionTitle={"__________Post Details_________"}
+        title={`Explore Volunteer Opportunities, Engage with Causes You Care About, and Transform Lives`}
+      ></NavbarBg>
       <div className="h-[750px]  max-w-7xl mx-auto rounded-2xl relative border-light border-2 overflow-clip flex shadow-lg justify-center my-10 p-10 gap-10 bg-white ">
         <div className="h-full w-1/2">
           <div className="h-[750px] w-full relative">

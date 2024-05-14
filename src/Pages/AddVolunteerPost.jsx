@@ -66,10 +66,8 @@ const AddVolunteerPost = () => {
       </Helmet>
       <NavbarBg
         img={banner}
-        sectionTitle={"__________Making a difference_________"}
-        title={`Together we can
-              create positive change
-            in the world`}
+        sectionTitle={"__________Add Volunteer Post_________"}
+        title={`Empower Change, Be the Difference: Share Your Volunteer Opportunities and Inspire Others to Make an Impact`}
       ></NavbarBg>
       <div className="mt-10">
         <h1 className="text-xl lg:text-3xl font-bold text-center max-w-fit mx-auto pb-2 border-b-light border-b-2">
