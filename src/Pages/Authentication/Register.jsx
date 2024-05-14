@@ -6,8 +6,10 @@ import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import logingif from "../../assets/ligin.json";
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const { createUser, setUser, updateUserProfile, logOut, user } =
     useContext(AuthContext);
   const [error, setError] = useState("");
@@ -180,11 +182,20 @@ const Register = () => {
               </span>
 
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
                 name="password"
               />
+              <div className="absolute top-1/2 -translate-y-1/2 right-3 mb-2 text-lg">
+                {showPassword ? (
+                  <FaEyeSlash
+                    onClick={() => setShowPassword(false)}
+                  ></FaEyeSlash>
+                ) : (
+                  <FaEye onClick={() => setShowPassword(true)}></FaEye>
+                )}
+              </div>
             </div>
             <p className="text-red-600">{error}</p>
             <div className="mt-6">

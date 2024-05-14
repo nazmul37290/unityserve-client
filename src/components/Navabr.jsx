@@ -4,6 +4,7 @@ import "../css/app.css";
 import { createContext, useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 export const ThemeContext = createContext();
 const Navabr = () => {
@@ -11,9 +12,13 @@ const Navabr = () => {
   const { user, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogOut = () => {
-    logOut();
-    toast.success("logged out successfully");
-    navigate("/login");
+    logOut().then(() => {
+      axios.post(`${import.meta.env.VITE_URL}/logout`).then((result) => {
+        console.log(result);
+        toast.success("logged out successfully");
+        navigate("/login");
+      });
+    });
   };
   console.log(user);
 

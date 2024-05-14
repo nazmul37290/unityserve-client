@@ -4,15 +4,17 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import "../../css/app.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast from "react-hot-toast";
 import Lottie from "lottie-react";
 import logingif from "../../assets/loginpage.json";
 import { Helmet } from "react-helmet-async";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location.state);
@@ -106,7 +108,7 @@ const Login = () => {
                     />
                   </div>
 
-                  <div className="mt-4">
+                  <div className="mt-4 ">
                     <div className="flex items-center justify-between">
                       <label className="block text-sm text-gray-800 dark:text-gray-200">
                         Password
@@ -118,12 +120,22 @@ const Login = () => {
                         Forget Password?
                       </a>
                     </div>
-
-                    <input
-                      type="password"
-                      name="password"
-                      className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
-                    />
+                    <div className="relative">
+                      <input
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        className="block w-full px-4 py-2 mt-2 text-gray-700 bg-white border rounded-lg dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                      />
+                      <div className="absolute top-1/2 -translate-y-1/2 right-3 mb-2 text-lg">
+                        {showPassword ? (
+                          <FaEyeSlash
+                            onClick={() => setShowPassword(false)}
+                          ></FaEyeSlash>
+                        ) : (
+                          <FaEye onClick={() => setShowPassword(true)}></FaEye>
+                        )}
+                      </div>
+                    </div>
                   </div>
 
                   <div className="mt-6">
