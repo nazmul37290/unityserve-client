@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import "../css/app.css";
 import { Link } from "react-router-dom";
+import banner from "../assets/banner2.jpg";
 import { Helmet } from "react-helmet-async";
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
@@ -111,7 +112,7 @@ const ManageMyPost = () => {
       </Helmet>
       <div>
         <NavbarBg
-          img={""}
+          img={banner}
           sectionTitle={"__________Manage my Post_________"}
           title={`Manage Your Volunteer Opportunities Effectively and Inspire Others to Take Action`}
         ></NavbarBg>

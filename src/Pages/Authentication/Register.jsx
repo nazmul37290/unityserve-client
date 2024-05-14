@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import NavbarBg from "../../components/NavbarBg";
+import banner from "../../assets/banner4.jpg";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -62,7 +63,7 @@ const Register = () => {
         <title>UNITYSERVE | Register</title>
       </Helmet>
       <NavbarBg
-        img={"banner"}
+        img={banner}
         sectionTitle={"__________Register Now_________"}
         title={`Register Today to Explore Volunteer Opportunities and Create Lasting Change`}
       ></NavbarBg>

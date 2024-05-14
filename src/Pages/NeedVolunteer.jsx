@@ -1,5 +1,5 @@
 import NavbarBg from "../components/NavbarBg";
-import banner from "../assets/banner.jpg";
+import banner from "../assets/banner5.jpg";
 import VolunteerCard from "../components/VolunteerCard";
 import { IoGridOutline } from "react-icons/io5";
 import { FaList } from "react-icons/fa";

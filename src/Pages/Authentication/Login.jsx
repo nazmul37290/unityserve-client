@@ -1,5 +1,5 @@
 import NavbarBg from "../../components/NavbarBg";
-
+import banner from "../../assets/banner4.jpg";
 import "swiper/css";
 import "swiper/css/effect-cards";
 import "../../css/app.css";
@@ -80,7 +80,7 @@ const Login = () => {
         <title>UNITYSERVE | Login</title>
       </Helmet>
       <NavbarBg
-        img={""}
+        img={banner}
         sectionTitle={"__________Login_________"}
         title={` Sign in to Access a World of Meaningful Volunteer Experiences`}
       ></NavbarBg>

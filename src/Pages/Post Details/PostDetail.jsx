@@ -1,5 +1,5 @@
 import NavbarBg from "../../components/NavbarBg";
-import banner from "../../assets/banner.jpg";
+import banner from "../../assets/banner3.jpg";
 import { FaEnvelope, FaFlag, FaLocationDot, FaPerson } from "react-icons/fa6";
 import { BiCategory } from "react-icons/bi";
 import BeAVolunteerModal from "./BeAVolunteerModal";
