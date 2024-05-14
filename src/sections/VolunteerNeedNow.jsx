@@ -7,10 +7,12 @@ import { useState } from "react";
 
 const VolunteerNeedNow = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
   useState(() => {
     axios(`${import.meta.env.VITE_URL}/posts`).then((result) => {
       console.log(result.data);
       setPosts(result.data);
+      setLoading(false);
     });
   }, []);
   return (
@@ -19,13 +21,24 @@ const VolunteerNeedNow = () => {
         Volunteer Need Now
       </h1>
       <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-16">
-        {posts?.slice(0, 6).map((post) => {
-          return (
-            <div key={post._id} className="flex justify-center items-center">
-              <VolunteerCard post={post}></VolunteerCard>;
-            </div>
-          );
-        })}
+        {loading ? (
+          <div className="text-center col-span-3">
+            <span className="loading loading-infinity loading-lg"></span>
+          </div>
+        ) : (
+          <>
+            {posts?.slice(0, 6).map((post) => {
+              return (
+                <div
+                  key={post._id}
+                  className="flex justify-center items-center"
+                >
+                  <VolunteerCard post={post}></VolunteerCard>;
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
       <div className="flex justify-center mt-16">
         <Link to={"/needVolunteer"}>

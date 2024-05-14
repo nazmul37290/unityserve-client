@@ -11,6 +11,7 @@ import axios from "axios";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 const ManageMyPost = () => {
+  const [loading, setLoading] = useState(true);
   const [myPosts, setMyPosts] = useState([]);
   const [myVolunteerRequests, setMyVolunteerRequests] = useState([]);
   const { user } = useContext(AuthContext);
@@ -85,6 +86,7 @@ const ManageMyPost = () => {
       })
       .then((result) => {
         setMyPosts(result.data);
+        setLoading(false);
       });
   }, [user?.email]);
 
@@ -98,6 +100,7 @@ const ManageMyPost = () => {
       .then((result) => {
         console.log(result.data);
         setMyVolunteerRequests(result.data);
+        setLoading(false);
       });
   }, [user?.email]);
 
@@ -146,7 +149,11 @@ const ManageMyPost = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {myPosts.length > 0 ? (
+                      {loading ? (
+                        <div className="text-center col-span-3">
+                          <span className="loading loading-infinity loading-lg"></span>
+                        </div>
+                      ) : myPosts.length > 0 ? (
                         myPosts?.map((post, i) => {
                           const {
                             _id,
@@ -242,7 +249,11 @@ const ManageMyPost = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {myVolunteerRequests.length > 0 ? (
+                      {loading ? (
+                        <div className="text-center col-span-3">
+                          <span className="loading loading-infinity loading-lg"></span>
+                        </div>
+                      ) : myVolunteerRequests.length > 0 ? (
                         myVolunteerRequests?.map((post, i) => {
                           const {
                             _id,
