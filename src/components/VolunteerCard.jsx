@@ -14,7 +14,7 @@ const VolunteerCard = ({ post }) => {
   } = post;
   return (
     <div className="relative h-[250px] w-[350px] mb-24">
-      <div className="h-[250px] w-[350px]  relative rounded-3xl">
+      <div className="h-[250px] w-auto md:w-[350px]  relative rounded-3xl">
         <img src={thumbnail} className="w-full h-full rounded-3xl" alt="" />
       </div>
       <div className="h-[200px] absolute bg-base-100 left-1/2 -translate-x-1/2 -bottom-[100px] w-[300px] hover:scale-110 hover:bg-light shadow-lg hover:text-base-100 rounded-3xl duration-1000">

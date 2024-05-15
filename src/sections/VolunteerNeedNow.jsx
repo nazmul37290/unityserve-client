@@ -16,11 +16,11 @@ const VolunteerNeedNow = () => {
     });
   }, []);
   return (
-    <div className="bg-[#91C591] p-10">
-      <h1 className="text-xl lg:text-3xl font-bold text-center max-w-fit mx-auto pb-2 border-b-light border-b-2">
+    <div className="bg-[#91C591] p-4 lg:p-10">
+      <h1 className="text-xl pt-4 lg:text-3xl font-bold text-center max-w-fit mx-auto pb-2 border-b-light border-b-2">
         Volunteer Need Now
       </h1>
-      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mx-auto mt-16">
+      <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mx-auto mt-4 md:mt-16">
         {loading ? (
           <div className="text-center col-span-3">
             <span className="loading loading-infinity loading-lg"></span>
@@ -40,7 +40,7 @@ const VolunteerNeedNow = () => {
           </>
         )}
       </div>
-      <div className="flex justify-center mt-16">
+      <div className="flex justify-center  my-16">
         <Link to={"/needVolunteer"}>
           <button className="border-2 text-base-100 font-bold hover:bg-base-100 hover:text-middle  border-base-100 rounded-full py-2 px-6 flex items-center gap-2">
             See All{" "}
