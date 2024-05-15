@@ -4,7 +4,7 @@ const Testimonial = () => {
   return (
     <div>
       <div className=" mt-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-2   gap-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2   gap-4">
           <div className="h-[750px]">
             <img
               src={soloVolunteer}
@@ -28,7 +28,7 @@ const Testimonial = () => {
                 </div>
               </div>
             </div>
-            <div className="relative right-[250px]">
+            <div className="lg:relative right-[250px]">
               <TestimonialSlider></TestimonialSlider>
             </div>
           </div>

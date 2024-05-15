@@ -6,10 +6,12 @@ import BeAVolunteerModal from "./BeAVolunteerModal";
 import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const PostDetail = () => {
+  const { user } = useContext(AuthContext);
   const { data } = useLoaderData();
   console.log(data.data);
 
@@ -24,6 +26,13 @@ const PostDetail = () => {
     volunteersNeeded,
   } = data;
   const handleOpenModal = () => {
+    if (user.email === organizer.email) {
+      return Swal.fire({
+        icon: "error",
+        title: "Nopeee!!",
+        text: "You cannot be a volunteer in your post",
+      });
+    }
     if (volunteersNeeded == 0) {
       return Swal.fire({
         icon: "error",

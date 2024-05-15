@@ -34,7 +34,7 @@ const Navabr = () => {
     <div className="w-full z-50  text-base-100 absolute">
       <footer className="footer max-w-7xl mx-auto items-center p-4 ">
         <aside className="items-center grid-flow-col">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col md:flex-row  items-start md:items-center gap-4">
             <p className="flex items-center gap-2">
               <span>
                 <FaLocationDot className="text-lg text-light"></FaLocationDot>
