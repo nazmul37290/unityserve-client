@@ -52,11 +52,15 @@ const PostDetail = () => {
         sectionTitle={"__________Post Details_________"}
         title={`Explore Volunteer Opportunities, Engage with Causes You Care About, and Transform Lives`}
       ></NavbarBg>
-      <div className="h-[750px]  max-w-7xl mx-auto rounded-2xl relative border-light border-2 overflow-clip flex shadow-lg justify-center my-10 p-10 gap-10 bg-base-100 ">
-        <div className="h-full w-1/2">
-          <div className="h-[750px] w-full relative">
+      <div
+        className="lg:h-[750px]  max-w-7xl mx-auto rounded-2xl relative border-light border-2 overflow-clip flex flex-col
+      lg:flex-row shadow-lg justify-center my-10 p-2 md:p-10 gap-10 bg-base-100 "
+      >
+        <div className="h-full flex flex-col md:w-1/2">
+          <div className="h-full lg:h-[750px] w-full lg:relative">
             <img src={thumbnail} className="h-full   w-full" alt="" />
-            <div className="h-[150px] bottom-10 rounded-3xl w-[300px] bg-light text-base-100 flex gap-5 text-lg p-4 absolute right-0">
+
+            <div className="h-[150px] hidden bottom-10 rounded-3xl w-[300px] bg-light text-base-100 lg:flex gap-5 text-lg p-4 absolute right-0">
               <FaFlag className="text-4xl w-1/3 mt-5"></FaFlag>
               <div>
                 <h1 className="font-bold text-2xl">
@@ -71,7 +75,7 @@ const PostDetail = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 py-10 text-lg text-black ">
+        <div className="md:w-1/2 py-2 md:py-10 text-lg text-black ">
           <div className="flex justify-around">
             <p className="flex items-center">
               <FaLocationDot></FaLocationDot> {location}
@@ -80,7 +84,7 @@ const PostDetail = () => {
               <BiCategory></BiCategory> {category}
             </p>
           </div>
-          <h1 className="uppercase text-lg mt-10 lg:text-5xl font-bold text-main">
+          <h1 className="uppercase text-center md:text-start text-2xl mt-10 lg:text-5xl font-bold text-main">
             {title}
           </h1>
           <p className="mt-4">{description}</p>
@@ -92,12 +96,17 @@ const PostDetail = () => {
             Deadline: <span>{deadline.slice(0, 10)}</span>
           </p>
           <div className="mt-5">
-            <p className="flex items-center gap-2">
-              <FaPerson></FaPerson> Organizer Name:
+            <p className="flex flex-col md:flex-row md:items-center gap-2">
+              <span className="flex items-center font-bold gap-1">
+                <FaPerson></FaPerson> Organizer Name:
+              </span>
               <span>{organizer?.name}</span>
             </p>
-            <p className="flex items-center gap-2">
-              <FaEnvelope></FaEnvelope> Organizer email:
+            <p className="flex flex-col md:flex-row md:items-center  gap-2">
+              <span className="flex items-center gap-1 font-bold">
+                <FaEnvelope></FaEnvelope> Organizer email:
+              </span>
+
               <span>{organizer?.email}</span>
             </p>
           </div>

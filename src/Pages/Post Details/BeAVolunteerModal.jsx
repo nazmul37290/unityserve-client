@@ -79,12 +79,12 @@ const BeAVolunteerModal = ({ data }) => {
   };
   return (
     <dialog id="my_modal_2" className="modal ">
-      <div className="modal-box w-[850px]">
+      <div className="modal-box lg:w-[850px]">
         <form
           onSubmit={handleReqVolunteer}
           className="container flex flex-col mx-auto space-y-12"
         >
-          <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
+          <fieldset className="grid grid-cols-4 gap-6 md:p-6 rounded-md shadow-sm dark:bg-gray-50">
             <div className="grid grid-cols-6 gap-4 col-span-full ">
               <div className="col-span-full sm:col-span-3">
                 <label htmlFor="firstname" className="text-sm">
