@@ -143,7 +143,7 @@ const ManageMyPost = () => {
                       <col className="w-24" />
                     </colgroup>
                     <thead className="bg-gray-300">
-                      <tr className="text-left">
+                      <tr className="text-left bg-light text-base-100">
                         <th className="p-3">No</th>
                         <th className="p-3">Title</th>
                         <th className="p-3">Category</th>
@@ -193,7 +193,7 @@ const ManageMyPost = () => {
                               </td>
                               <td className="p-3 text-right">
                                 <Link to={`/updatePost/${_id}`}>
-                                  <button className="px-3 py-1 font-semibold rounded-md bg-light text-gray-50">
+                                  <button className="px-3 py-1 font-semibold rounded-md bg-light text-base-100">
                                     <span className="flex items-center">
                                       Update <MdEdit></MdEdit>
                                     </span>
@@ -203,7 +203,7 @@ const ManageMyPost = () => {
                               <td className="p-3 text-center">
                                 <button
                                   onClick={() => handleDelete(_id)}
-                                  className="px-3 py-1 font-semibold rounded-md bg-red-600 text-gray-50"
+                                  className="px-3 py-1 font-semibold rounded-md bg-[#f61238] text-base-100"
                                 >
                                   <span className="flex items-center">
                                     Delete <MdDelete></MdDelete>
@@ -244,7 +244,7 @@ const ManageMyPost = () => {
                       <col className="w-24" />
                     </colgroup>
                     <thead className="bg-gray-300">
-                      <tr className="text-left">
+                      <tr className="text-left bg-light text-base-100">
                         <th className="p-3">No</th>
                         <th className="p-3">Title</th>
                         <th className="p-3">Category</th>
@@ -295,7 +295,7 @@ const ManageMyPost = () => {
                               <td className="p-3 text-center">
                                 <button
                                   onClick={() => handleCancelReq(_id)}
-                                  className="px-3 py-1 font-semibold rounded-md bg-red-600 text-gray-50"
+                                  className="px-3 py-1 font-semibold rounded-md bg-[#f61238] text-base-100"
                                 >
                                   <span className="flex items-center">
                                     Cancel <MdDelete></MdDelete>

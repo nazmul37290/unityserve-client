@@ -3,7 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "node_modules/flowbite-react/lib/esm/**/*.js",
+    // "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
     extend: {},
@@ -19,5 +19,5 @@ export default {
   daisyui: {
     themes: ["light", "forest"],
   },
-  plugins: [require("daisyui"), require("flowbite/plugin")],
+  plugins: [require("daisyui")],
 };

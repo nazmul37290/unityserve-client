@@ -31,7 +31,7 @@ const Navabr = () => {
     document.querySelector("html").setAttribute("data-theme", theme);
   };
   return (
-    <div className="w-full z-50  text-gray-300 absolute">
+    <div className="w-full z-50  text-base-100 absolute">
       <footer className="footer max-w-7xl mx-auto items-center p-4 ">
         <aside className="items-center grid-flow-col">
           <div className="flex items-center gap-4">
@@ -160,7 +160,7 @@ const Navabr = () => {
                 <NavLink
                   to={"/"}
                   className={({ isActive, isPending }) =>
-                    isActive ? "bg-light text-white " : isPending ? "" : ""
+                    isActive ? "bg-light text-base-100 " : isPending ? "" : ""
                   }
                 >
                   Home
@@ -170,7 +170,7 @@ const Navabr = () => {
                 <NavLink
                   to={"/needVolunteer"}
                   className={({ isActive, isPending }) =>
-                    isActive ? "bg-light text-white" : isPending ? "" : ""
+                    isActive ? "bg-light text-base-100" : isPending ? "" : ""
                   }
                 >
                   Need Volunteer
@@ -185,7 +185,7 @@ const Navabr = () => {
                         to={"/addVolunteerNeedPost"}
                         className={({ isActive, isPending }) =>
                           isActive
-                            ? "bg-light text-white "
+                            ? "bg-light text-base-100 "
                             : isPending
                             ? ""
                             : ""
@@ -198,7 +198,11 @@ const Navabr = () => {
                       <NavLink
                         to={"/manageMyPost"}
                         className={({ isActive, isPending }) =>
-                          isActive ? "bg-light text-white" : isPending ? "" : ""
+                          isActive
+                            ? "bg-light text-base-100"
+                            : isPending
+                            ? ""
+                            : ""
                         }
                       >
                         Manage My post
@@ -219,7 +223,11 @@ const Navabr = () => {
                     <NavLink
                       to={"/Login"}
                       className={({ isActive, isPending }) =>
-                        isActive ? "bg-light text-white" : isPending ? "" : ""
+                        isActive
+                          ? "bg-light text-base-100"
+                          : isPending
+                          ? ""
+                          : ""
                       }
                     >
                       Login
@@ -235,12 +243,12 @@ const Navabr = () => {
         </div>
         <div className="navbar-end hidden lg:flex">
           <ul className="menu menu-horizontal font-bold px-1">
-            <li className="hover:bg-middle hover:text-white rounded-xl">
+            <li className="hover:bg-middle hover:text-base-100 rounded-xl">
               <NavLink
                 to={"/"}
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "bg-light text-white rounded-full"
+                    ? "bg-light text-base-100 rounded-full"
                     : isPending
                     ? ""
                     : ""
@@ -249,12 +257,12 @@ const Navabr = () => {
                 Home
               </NavLink>
             </li>
-            <li className="hover:bg-middle hover:text-white rounded-xl">
+            <li className="hover:bg-middle hover:text-base-100 rounded-xl">
               <NavLink
                 to={"/needVolunteer"}
                 className={({ isActive, isPending }) =>
                   isActive
-                    ? "bg-light text-white rounded-full"
+                    ? "bg-light text-base-100 rounded-full"
                     : isPending
                     ? ""
                     : ""
@@ -263,16 +271,16 @@ const Navabr = () => {
                 Need Volunteer
               </NavLink>
             </li>
-            <li className="hover:bg-middle hover:text-white rounded-xl">
+            <li className="hover:bg-middle hover:text-base-100 rounded-xl">
               <details>
                 <summary>My Profile</summary>
                 <ul className=" w-[200px] bg-[rgb(0,0,0,.2)] background-blur p-2">
-                  <li className="hover:bg-middle hover:text-white rounded-xl">
+                  <li className="hover:bg-middle hover:text-base-100 rounded-xl">
                     <NavLink
                       to={"/addVolunteerNeedPost"}
                       className={({ isActive, isPending }) =>
                         isActive
-                          ? "bg-light text-white rounded-full"
+                          ? "bg-light text-base-100 rounded-full"
                           : isPending
                           ? ""
                           : ""
@@ -281,12 +289,12 @@ const Navabr = () => {
                       Add Volunteer Post
                     </NavLink>
                   </li>
-                  <li className="hover:bg-middle hover:text-white rounded-xl">
+                  <li className="hover:bg-middle hover:text-base-100 rounded-xl">
                     <NavLink
                       to={"/manageMyPost"}
                       className={({ isActive, isPending }) => {
                         isActive
-                          ? "bg-light text-white rounded-full"
+                          ? "bg-light text-base-100 rounded-full"
                           : isPending
                           ? ""
                           : "";
@@ -352,7 +360,7 @@ const Navabr = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="px-10 py-2 bg-light text-white rounded-full font-bold "
+                className="px-10 py-2 bg-light text-base-100 rounded-full font-bold "
               >
                 Logout
               </button>
@@ -361,7 +369,7 @@ const Navabr = () => {
             <>
               <Link
                 to={"/login"}
-                className="px-10 py-2 bg-light text-white rounded-full font-bold "
+                className="px-10 py-2 bg-light text-base-100 rounded-full font-bold "
               >
                 Login
               </Link>

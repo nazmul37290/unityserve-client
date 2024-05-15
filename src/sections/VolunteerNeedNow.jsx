@@ -3,13 +3,13 @@ import VolunteerCard from "../components/VolunteerCard";
 
 import { FaArrowRight } from "react-icons/fa6";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const VolunteerNeedNow = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  useState(() => {
-    axios(`${import.meta.env.VITE_URL}/posts`).then((result) => {
+  useEffect(() => {
+    axios.get(`${import.meta.env.VITE_URL}/posts`).then((result) => {
       console.log(result.data);
       setPosts(result.data);
       setLoading(false);
@@ -42,7 +42,7 @@ const VolunteerNeedNow = () => {
       </div>
       <div className="flex justify-center mt-16">
         <Link to={"/needVolunteer"}>
-          <button className="border-2 text-white font-bold hover:bg-white hover:text-middle  border-white rounded-full py-2 px-6 flex items-center gap-2">
+          <button className="border-2 text-base-100 font-bold hover:bg-base-100 hover:text-middle  border-base-100 rounded-full py-2 px-6 flex items-center gap-2">
             See All{" "}
             <span>
               <FaArrowRight></FaArrowRight>

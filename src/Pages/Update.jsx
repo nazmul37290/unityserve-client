@@ -103,7 +103,7 @@ const Update = () => {
                       name="username"
                       id=""
                       type="text"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     />
                   </div>
                   <div className="col-span-full sm:col-span-3">
@@ -116,7 +116,7 @@ const Update = () => {
                       name="userEmail"
                       id=""
                       type="email"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     />
                   </div>
                   <div className="col-span-full sm:col-span-3">
@@ -128,7 +128,7 @@ const Update = () => {
                       name="title"
                       type="text"
                       placeholder="post title"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     />
                   </div>
                   <div className="col-span-full sm:col-span-3">
@@ -140,7 +140,7 @@ const Update = () => {
                       name="thumbnailUrl"
                       type="text"
                       placeholder="Thumbnail URL"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     />
                   </div>
                   <div className="col-span-full">
@@ -152,7 +152,7 @@ const Update = () => {
                       name="location"
                       type="text"
                       placeholder="Location"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     />
                   </div>
                   <div className="col-span-full sm:col-span-2">
@@ -161,7 +161,7 @@ const Update = () => {
                     </label>
                     <select
                       defaultValue={category}
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                       name="category"
                       id=""
                     >
@@ -180,7 +180,7 @@ const Update = () => {
                       name="volunteerCount"
                       type="number"
                       placeholder="volunteer count"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     />
                   </div>
                   <div className="col-span-full sm:col-span-2">
@@ -189,7 +189,7 @@ const Update = () => {
                     </label>
                     <br />
                     <DatePicker
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                       showIcon
                       selected={deadline.slice(0, 10)}
                       dateFormat="d/ M/ yyyy"
@@ -207,14 +207,14 @@ const Update = () => {
                       name="description"
                       id="bio"
                       placeholder="Description"
-                      className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                      className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                     ></textarea>
                   </div>
                 </div>
               </fieldset>
               <input
                 type="submit"
-                className="btn btn-full bg-light text-white font-bold text-lg"
+                className="btn btn-full bg-light text-base-100 font-bold text-lg"
                 value="Update"
               />
             </form>

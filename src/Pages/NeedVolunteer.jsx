@@ -47,12 +47,12 @@ const NeedVolunteer = () => {
               <input
                 type="text"
                 name="search"
-                className=""
+                className="p-2 rounded-xl border border-light"
                 placeholder="Search"
               />
               <input
                 type="submit"
-                className="btn bg-light rounded-lg text-white"
+                className="btn bg-light rounded-lg text-base-100"
                 value="search"
               />
             </label>
@@ -91,7 +91,7 @@ const NeedVolunteer = () => {
             {/* table container here */}
             <div
               className={`max-w-7xl mt-20 mx-auto ${
-                theme === "forest" ? "bg-red-500" : "bg-white"
+                theme === "forest" ? "bg-red-500" : "bg-base-100"
               } `}
             >
               <div className="overflow-x-auto">
@@ -138,7 +138,7 @@ const NeedVolunteer = () => {
                           </td>
                           <td>
                             {" "}
-                            <span className="bg-main text-white p-2 rounded-lg">
+                            <span className="bg-main text-base-100 p-2 rounded-lg">
                               {category}
                             </span>
                           </td>
@@ -146,7 +146,7 @@ const NeedVolunteer = () => {
                           <td>{deadline.slice(0, 10)}</td>
                           <th>
                             <Link to={`/postDetails/${_id}`}>
-                              <button className="btn bg-light text-white btn-sm">
+                              <button className="btn bg-light text-base-100 btn-sm">
                                 View Details
                               </button>
                             </Link>

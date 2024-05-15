@@ -67,7 +67,7 @@ const Register = () => {
         sectionTitle={"__________Register Now_________"}
         title={`Register Today to Explore Volunteer Opportunities and Create Lasting Change`}
       ></NavbarBg>
-      <section className="bg-white h-[800px] dark:bg-gray-900">
+      <section className="bg-base-100 h-[800px] dark:bg-gray-900">
         <div className="container flex items-center justify-center mt-20 px-6 mx-auto">
           <div className="w-1/2">
             <Lottie animationData={logingif} loop={true}></Lottie>
@@ -85,7 +85,7 @@ const Register = () => {
             <div className="flex items-center justify-center mt-6">
               <a
                 href="#"
-                className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-light dark:border-light dark:text-white"
+                className="w-1/3 pb-4 font-medium text-center text-gray-800 capitalize border-b-2 border-light dark:border-light dark:text-base-100"
               >
                 sign up
               </a>
@@ -111,7 +111,7 @@ const Register = () => {
 
               <input
                 type="text"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-base-100 border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="name"
                 name="name"
               />
@@ -136,7 +136,7 @@ const Register = () => {
 
               <input
                 type="text"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-base-100 border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="enter image URL"
                 name="imageURL"
               />
@@ -162,7 +162,7 @@ const Register = () => {
 
               <input
                 type="email"
-                className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full py-3 text-gray-700 bg-base-100 border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
                 name="email"
               />
@@ -188,7 +188,7 @@ const Register = () => {
 
               <input
                 type={showPassword ? "text" : "password"}
-                className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-10 py-3 text-gray-700 bg-base-100 border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
                 name="password"
               />
@@ -206,7 +206,7 @@ const Register = () => {
             <div className="mt-6">
               <input
                 type="submit"
-                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-middle rounded-lg hover:bg-light focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                className="w-full px-6 py-3 text-sm font-medium tracking-wide text-base-100 capitalize transition-colors duration-300 transform bg-middle rounded-lg hover:bg-light focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
                 value="Sign Up"
               />
 

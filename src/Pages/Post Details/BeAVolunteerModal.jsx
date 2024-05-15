@@ -79,7 +79,7 @@ const BeAVolunteerModal = ({ data }) => {
   };
   return (
     <dialog id="my_modal_2" className="modal ">
-      <div className="modal-box">
+      <div className="modal-box w-[850px]">
         <form
           onSubmit={handleReqVolunteer}
           className="container flex flex-col mx-auto space-y-12"
@@ -91,12 +91,12 @@ const BeAVolunteerModal = ({ data }) => {
                   Organizer Name
                 </label>
                 <input
-                  value={organizer.name}
+                  value={organizer?.name}
                   readOnly
                   name="username"
                   id=""
                   type="text"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -104,12 +104,12 @@ const BeAVolunteerModal = ({ data }) => {
                   Organizer Email
                 </label>
                 <input
-                  value={organizer.email}
+                  value={organizer?.email}
                   readOnly
                   name="userEmail"
                   id=""
                   type="email"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -122,7 +122,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="title"
                   type="text"
                   placeholder="post title"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-3">
@@ -135,7 +135,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="thumbnailUrl"
                   type="text"
                   placeholder="Thumbnail URL"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full">
@@ -148,7 +148,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="location"
                   type="text"
                   placeholder="Location"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
@@ -158,7 +158,7 @@ const BeAVolunteerModal = ({ data }) => {
                 <select
                   readOnly
                   value={category}
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   name="category"
                   id=""
                 >
@@ -178,7 +178,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="volunteerCount"
                   type="number"
                   placeholder="volunteer count"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full  p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full sm:col-span-2">
@@ -189,9 +189,9 @@ const BeAVolunteerModal = ({ data }) => {
                 <input
                   name="deadline"
                   readOnly
-                  value={deadline.slice(0, 10)}
+                  value={deadline?.slice(0, 10)}
                   type="text"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                   placeholder="deadline"
                 />
               </div>
@@ -207,7 +207,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="description"
                   id="bio"
                   placeholder="Description"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 ></textarea>
               </div>
               <div className="col-span-full">
@@ -220,7 +220,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="volunteerName"
                   type="text"
                   placeholder=""
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full">
@@ -233,7 +233,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="volunteerEmail"
                   type="email"
                   placeholder=""
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
               <div className="col-span-full">
@@ -244,7 +244,7 @@ const BeAVolunteerModal = ({ data }) => {
                   name="suggestion"
                   id="bio"
                   placeholder="Suggestion"
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 ></textarea>
               </div>
               <div className="col-span-full">
@@ -257,14 +257,14 @@ const BeAVolunteerModal = ({ data }) => {
                   name="status"
                   type="text"
                   placeholder=""
-                  className="w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
+                  className="w-full p-2 border rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300"
                 />
               </div>
             </div>
           </fieldset>
           <input
             type="submit"
-            className="btn btn-full bg-light text-white font-bold text-lg"
+            className="btn btn-full bg-light text-base-100 font-bold text-lg"
             value="Request"
           />
         </form>

@@ -52,7 +52,7 @@ const Routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`, {
+          axios.get(`${import.meta.env.VITE_URL}/postDetails/${params.id}`, {
             withCredentials: true,
           }),
       },
