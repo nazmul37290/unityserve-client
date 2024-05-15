@@ -118,7 +118,7 @@ const ManageMyPost = () => {
         ></NavbarBg>
       </div>
 
-      <div className="max-w-7xl mx-auto min-h-screen">
+      <div className="max-w-7xl mt-6 mx-auto min-h-screen">
         <Tabs>
           <TabList>
             <Tab>MY POSTS</Tab>

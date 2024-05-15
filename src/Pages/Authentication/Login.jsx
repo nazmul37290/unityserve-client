@@ -87,11 +87,11 @@ const Login = () => {
       <div>
         <div>
           <>
-            <div className=" max-w-7xl mx-auto flex gap-10 mt-10">
-              <div className="w-1/2">
+            <div className=" max-w-7xl mx-auto flex flex-col md:flex-row gap-10 mt-10">
+              <div className="md:w-1/2">
                 <Lottie animationData={logingif} loop={true}></Lottie>
               </div>
-              <div className="w-1/2 h-full p-6 m-auto mx-auto bg-base-100 rounded-lg shadow-md dark:bg-gray-800">
+              <div className="md:w-1/2 h-full p-6 m-auto mx-auto bg-base-100 rounded-lg shadow-md dark:bg-gray-800">
                 <div className="flex justify-center mx-auto"></div>
 
                 <form onSubmit={handleLogin} className="mt-6">

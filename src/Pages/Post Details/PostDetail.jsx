@@ -56,11 +56,11 @@ const PostDetail = () => {
         className="lg:h-[750px]  max-w-7xl mx-auto rounded-2xl relative border-light border-2 overflow-clip flex flex-col
       lg:flex-row shadow-lg justify-center my-10 p-2 md:p-10 gap-10 bg-base-100 "
       >
-        <div className="h-full flex flex-col md:w-1/2">
-          <div className="h-full lg:h-[750px] w-full lg:relative">
+        <div className="h-full flex flex-col lg:w-1/2">
+          <div className="h-full lg:h-[750px] w-full md:relative">
             <img src={thumbnail} className="h-full   w-full" alt="" />
 
-            <div className="h-[150px] hidden bottom-10 rounded-3xl w-[300px] bg-light text-base-100 lg:flex gap-5 text-lg p-4 absolute right-0">
+            <div className="h-[150px] hidden bottom-10 rounded-3xl w-[300px] bg-light text-base-100 md:flex gap-5 text-lg p-4 absolute right-0">
               <FaFlag className="text-4xl w-1/3 mt-5"></FaFlag>
               <div>
                 <h1 className="font-bold text-2xl">
@@ -75,7 +75,7 @@ const PostDetail = () => {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 py-2 md:py-10 text-lg text-black ">
+        <div className="lg:w-1/2 py-2 md:py-10 text-lg text-black ">
           <div className="flex justify-around">
             <p className="flex items-center">
               <FaLocationDot></FaLocationDot> {location}
@@ -84,7 +84,7 @@ const PostDetail = () => {
               <BiCategory></BiCategory> {category}
             </p>
           </div>
-          <h1 className="uppercase text-center md:text-start text-2xl mt-10 lg:text-5xl font-bold text-main">
+          <h1 className="uppercase text-center md:text-start text-2xl mt-10 md:text-5xl font-bold text-main">
             {title}
           </h1>
           <p className="mt-4">{description}</p>

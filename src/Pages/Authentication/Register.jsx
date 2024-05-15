@@ -68,8 +68,8 @@ const Register = () => {
         title={`Register Today to Explore Volunteer Opportunities and Create Lasting Change`}
       ></NavbarBg>
       <section className="bg-base-100 h-[800px] dark:bg-gray-900">
-        <div className="container flex items-center justify-center mt-20 px-6 mx-auto">
-          <div className="w-1/2">
+        <div className="container flex flex-col md:flex-row items-center justify-center mt-20 px-6 mx-auto">
+          <div className="md:w-1/2">
             <Lottie animationData={logingif} loop={true}></Lottie>
           </div>
           <form
