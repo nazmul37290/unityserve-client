@@ -5,7 +5,7 @@ const Testimonial = () => {
     <div>
       <div className=" mt-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2   gap-4">
-          <div className="h-[750px]">
+          <div className="lg:h-[750px]">
             <img
               src={soloVolunteer}
               className="h-full w-full object-cover"
@@ -16,14 +16,16 @@ const Testimonial = () => {
             <div className="hero ">
               <div className="hero-content ">
                 <div className="max-w-md">
-                  <p>___________Testimonials___________</p>
+                  <p className="text-center">
+                    ___________Testimonials___________
+                  </p>
                   <h1 className="text-4xl mt-4 font-bold">
                     Voices of Impact: Testimonials from Our Community
                   </h1>
                   <p className="py-6">
                     Discover the stories of those who have made a difference
                     through volunteering. Hear firsthand accounts of the impact
-                    they've had on communities, organizations, and lives..{" "}
+                    they have had on communities, organizations, and lives..{" "}
                   </p>
                 </div>
               </div>

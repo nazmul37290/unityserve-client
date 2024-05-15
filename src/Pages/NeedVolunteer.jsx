@@ -41,7 +41,7 @@ const NeedVolunteer = () => {
         <h1 className="text-xl mt-24 lg:text-3xl font-bold text-center max-w-fit mx-auto pb-2 border-b-light border-b-2">
           Need Volunteer
         </h1>
-        <div className="max-w-7xl mx-auto flex items-center justify-end mt-2">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-end mt-2">
           <form onSubmit={handleSearch}>
             <label className="w-full rounded-lg flex mr-2 items-center gap-2">
               <input
@@ -57,10 +57,13 @@ const NeedVolunteer = () => {
               />
             </label>
           </form>
-          <button onClick={() => setALlData(data)} className="btn">
-            Reset
-          </button>
-          <div>
+          <div className="flex items-center">
+            <button
+              onClick={() => setALlData(data)}
+              className="btn mt-2 md:mt-0"
+            >
+              Reset
+            </button>
             <button onClick={() => setCardView(true)} className="text-3xl mx-3">
               <IoGridOutline />
             </button>
@@ -90,7 +93,7 @@ const NeedVolunteer = () => {
           <>
             {/* table container here */}
             <div
-              className={`max-w-7xl mt-20 mx-auto ${
+              className={`max-w-7xl mt-10 lg:mt-20 mx-auto ${
                 theme === "forest" ? "bg-red-500" : "bg-base-100"
               } `}
             >
@@ -98,9 +101,9 @@ const NeedVolunteer = () => {
                 <table className="table ">
                   {/* head */}
                   <thead>
-                    <tr className="text-center">
+                    <tr className="text-center bg-light text-base-100">
                       <th>Title</th>
-                      <th>Category</th>
+                      <th className="min-w-[150px]">Category</th>
                       <th>No of Volunteer need</th>
                       <th>Deadline</th>
                       <th></th>

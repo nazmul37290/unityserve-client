@@ -4,12 +4,14 @@ const Faq = () => {
   return (
     <div>
       <div className="bg-[#cdcccc] mt-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-3  items-center gap-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3  items-center gap-4">
           <div>
             <div className="hero ">
               <div className="hero-content ">
                 <div className="max-w-md">
-                  <p>___________Question and Answer___________</p>
+                  <p className="text-center">
+                    _______Question and Answer________
+                  </p>
                   <h1 className="text-4xl mt-4 font-bold">
                     Frequently Asked Questions
                   </h1>
@@ -27,11 +29,11 @@ const Faq = () => {
             </div>
           </div>
           <div>
-            <div>
+            <div className="">
               <img src={soloVolunteer} alt="" />
             </div>
           </div>
-          <div className="space-y-5 relative right-[50px]">
+          <div className="space-y-5 lg:relative right-[50px]">
             <div className="collapse collapse-arrow bg-base-200">
               <input type="radio" name="my-accordion-2" defaultChecked />
               <div className="collapse-title text-base bg-light text-base-100 font-medium">

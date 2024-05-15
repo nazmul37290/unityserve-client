@@ -11,7 +11,7 @@ import "../css/testimonialSlider.css";
 import { FaQuoteRight } from "react-icons/fa6";
 const TestimonialSlider = () => {
   return (
-    <div className="w-[300px] lg:w-[800px]">
+    <div className="w-[300px] md:w-[750px] lg:w-[800px]">
       <Swiper
         slidesPerView={2}
         spaceBetween={30}
@@ -23,7 +23,7 @@ const TestimonialSlider = () => {
         modules={[Autoplay, Pagination]}
         className="mySwiper swiper2"
       >
-        <SwiperSlide className="swiper-slide2  rounded-3xl relative">
+        <SwiperSlide className="swiper-slide2 rounded-3xl relative">
           <p className="italic text-lg text-[#e7e7e7]">
             Unity Serve has been an incredible platform for connecting
             volunteers with meaningful opportunities.
