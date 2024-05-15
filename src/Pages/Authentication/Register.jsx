@@ -10,10 +10,11 @@ import { Helmet } from "react-helmet-async";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
+  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const { createUser, setUser, updateUserProfile, logOut, user } =
     useContext(AuthContext);
-  const [error, setError] = useState("");
+
   const navigate = useNavigate();
 
   if (user) {
@@ -54,6 +55,7 @@ const Register = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
   return (

@@ -15,6 +15,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location.state);
@@ -49,6 +50,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
 
@@ -71,6 +73,7 @@ const Login = () => {
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message);
       });
   };
 
@@ -141,6 +144,8 @@ const Login = () => {
                       </div>
                     </div>
                   </div>
+
+                  <p className="text-[#f45151]">{error}</p>
 
                   <div className="mt-6">
                     <input
