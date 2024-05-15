@@ -237,7 +237,7 @@ const Navabr = () => {
               )}
             </ul>
           </div>
-          <a className="btn btn-ghost gap-0 text-2xl">
+          <a className="btn btn-ghost  gap-0 text-2xl">
             Unity<span className="text-light">Serve</span>
           </a>
         </div>

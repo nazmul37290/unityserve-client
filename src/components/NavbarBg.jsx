@@ -9,7 +9,7 @@ const NavbarBg = ({ img, sectionTitle, title }) => {
           <p className="mb-4 text-sm md:text-base uppercase text-base-100">
             {sectionTitle}
           </p>
-          <h1 className="text-xl lg:text-6xl font-bold text-center text-base-100  lg:w-[750px]">
+          <h1 className="text-xl md:text-6xl p-4  font-bold text-center text-base-100  lg:w-[750px]">
             {title}
           </h1>
         </div>
