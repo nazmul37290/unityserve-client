@@ -164,10 +164,7 @@ const ManageMyPost = () => {
                             _id,
                             category,
                             deadline,
-                            description,
-                            location,
-                            thumbnail,
-                            organizer,
+
                             title,
                             volunteersNeeded,
                           } = post;
@@ -264,10 +261,7 @@ const ManageMyPost = () => {
                             _id,
                             category,
                             deadline,
-                            description,
-                            location,
-                            thumbnail,
-                            organizer,
+
                             title,
                             volunteersNeeded,
                           } = post;

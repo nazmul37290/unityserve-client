@@ -115,10 +115,9 @@ const NeedVolunteer = () => {
                         _id,
                         category,
                         deadline,
-                        description,
-                        location,
+
                         thumbnail,
-                        organizer,
+
                         title,
                         volunteersNeeded,
                       } = post;

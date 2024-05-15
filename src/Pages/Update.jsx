@@ -19,7 +19,7 @@ const Update = () => {
     description,
     location,
     thumbnail,
-    organizer,
+
     title,
     volunteersNeeded,
   } = data;

@@ -3,7 +3,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import NeedVolunteer from "../NeedVolunteer";
+
+import PropTypes from "prop-types";
 
 const BeAVolunteerModal = ({ data }) => {
   const { user } = useContext(AuthContext);
@@ -281,3 +282,7 @@ const BeAVolunteerModal = ({ data }) => {
 };
 
 export default BeAVolunteerModal;
+
+BeAVolunteerModal.propTypes = {
+  data: PropTypes.object,
+};

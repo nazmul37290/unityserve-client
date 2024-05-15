@@ -18,7 +18,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   console.log(location.state);
-  const { loginWithEmailandPassword, signInWithGoogle, user } =
+  const { loginWithEmailandPassword, signInWithGoogle } =
     useContext(AuthContext);
   // if (user) {
   //   navigate("/");

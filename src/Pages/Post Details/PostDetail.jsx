@@ -4,10 +4,10 @@ import { FaEnvelope, FaFlag, FaLocationDot, FaPerson } from "react-icons/fa6";
 import { BiCategory } from "react-icons/bi";
 import BeAVolunteerModal from "./BeAVolunteerModal";
 import { Helmet } from "react-helmet-async";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
-import { useContext, useEffect, useState } from "react";
-import axios from "axios";
+import { useContext } from "react";
+
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const PostDetail = () => {
