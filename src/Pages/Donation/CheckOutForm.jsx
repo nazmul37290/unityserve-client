@@ -1,8 +1,8 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
-import axios, { Axios } from "axios";
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
-import Swal from "sweetalert2";
+
 import toast from "react-hot-toast";
 
 const CheckOutForm = () => {
