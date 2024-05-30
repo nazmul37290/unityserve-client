@@ -11,6 +11,7 @@ import ManageMyPost from "../Pages/ManageMyPost";
 import Update from "../Pages/Update";
 import PrivateRoute from "./PrivateRoute";
 import axios from "axios";
+import Donation from "../Pages/Donation/Donation";
 
 const Routes = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const Routes = createBrowserRouter([
           axios(`${import.meta.env.VITE_URL}/postDetails/${params.id}`, {
             withCredentials: true,
           }),
+      },
+      {
+        path: "/donation",
+        element: <Donation></Donation>,
       },
     ],
   },

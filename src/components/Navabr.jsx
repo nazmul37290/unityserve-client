@@ -177,6 +177,16 @@ const Navabr = () => {
                 </NavLink>
               </li>
               <li>
+                <NavLink
+                  to={"/donation"}
+                  className={({ isActive, isPending }) =>
+                    isActive ? "bg-light text-base-100" : isPending ? "" : ""
+                  }
+                >
+                  Donate
+                </NavLink>
+              </li>
+              <li>
                 <details>
                   <summary>My Profile</summary>
                   <ul className="  bg-[rgb(0,0,0,.2)] background-blur ">
@@ -241,7 +251,7 @@ const Navabr = () => {
             Unity<span className="text-light">Serve</span>
           </a>
         </div>
-        <div className="navbar-end hidden lg:flex">
+        <div className="navbar hidden justify-center lg:flex">
           <ul className="menu menu-horizontal font-bold px-1">
             <li className="hover:bg-middle hover:text-base-100 rounded-xl">
               <NavLink
@@ -269,6 +279,16 @@ const Navabr = () => {
                 }
               >
                 Need Volunteer
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to={"/donation"}
+                className={({ isActive, isPending }) =>
+                  isActive ? "bg-light text-base-100" : isPending ? "" : ""
+                }
+              >
+                Donate
               </NavLink>
             </li>
             <li className="hover:bg-middle hover:text-base-100 rounded-xl">
