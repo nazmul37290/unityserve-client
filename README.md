@@ -11,3 +11,9 @@ Live website link [https://unityserve-ee43d.web.app/](https://unityserve-ee43d.w
 - Login with email and password
 - Login with google
 - Register for user
+
+## How to run this repo locally
+
+- install node js 
+- add this command to project folder "npm i"
+- then add another command "npm run dev"
